@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "Reem-Kufi";
+  src: url("../FONT/Reem_Kufi/ReemKufi-VariableFont_wght.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Sen";
+  src: url("../FONT/Sen/Sen-VariableFont_wght.ttf") format("truetype");
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #F1F1FF;
+}
+
+/*# sourceMappingURL=_config.css.map */

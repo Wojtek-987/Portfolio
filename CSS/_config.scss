@@ -1,0 +1,34 @@
+// === Variables ===
+$bg-color: #F1F1FF;
+$text-color: #070709;
+$primary-color: #1100FA;
+$inactive-grey: #CCC;
+
+$global-inline-padding: clamp(10px, 12vw, 200px);
+$nav-padding: 1rem;
+
+$media-query-border: 900px;
+
+// === Init ===
+
+::selection {
+  background-color: rgba($primary-color, .1);
+}
+
+@font-face {
+  font-family: 'Reem-Kufi';
+  src: url("../FONT/Reem_Kufi/ReemKufi-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Sen';
+  src: url("../FONT/Sen/Sen-VariableFont_wght.ttf") format("truetype");
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: $bg-color;
+  scroll-behavior: smooth;
+  scrollbar-color: $primary-color;
+}

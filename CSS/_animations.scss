@@ -1,0 +1,193 @@
+// === Keyframes ===
+
+@keyframes line-dash-animation-for-after {
+  0% {
+    left: 0;
+    width: 100%;
+  }
+
+  25% {
+    left: 100%;
+    width: 0;
+  }
+
+  50% {
+    left: 0;
+    width: 0;
+  }
+
+  75% {
+    left: 0;
+    width: 100%;
+  }
+}
+
+@keyframes line-dash-animation-for-before {
+  0% {
+    left: 100%;
+  }
+
+  50% {
+    left: 0;
+  }
+
+  75% {
+    left: 100%;
+  }
+}
+
+@keyframes nav-line-dash-animation-for-after {
+  0% {
+    left: calc($nav-padding * 1.5);
+    width: calc(100% - #{$nav-padding} * 3);
+  }
+
+  25% {
+    left: calc(100% - #{$nav-padding} * 1.5);
+    width: 0;
+  }
+
+  50% {
+    left: calc($nav-padding * 1.5);
+    width: 0;
+  }
+
+  75% {
+    left: calc($nav-padding * 1.5);
+    width: calc(100% - #{$nav-padding} * 3);
+  }
+}
+
+@keyframes nav-line-dash-animation-for-before {
+  0% {
+    left: calc(100% - #{$nav-padding} * 1.5);
+  }
+
+  50% {
+    left: calc($nav-padding * 1.5);
+  }
+
+  75% {
+    left: calc(100% - #{$nav-padding} * 1.5);
+  }
+}
+
+@keyframes nav-btn-line-dash-animation-for-after {
+  0% {
+    left: calc($nav-padding * 2);
+    width: 0;
+  }
+
+  25% {
+    left: calc($nav-padding * 2);
+    width: calc(100% - #{$nav-padding} * 4);
+  }
+
+  75% {
+    left: calc(100% - #{$nav-padding} * 2);
+    width: 0;
+  }
+}
+
+@keyframes nav-btn-line-dash-animation-for-before {
+  0% {
+    left: calc($nav-padding * 2);
+    width: .1em;
+  }
+
+  25% {
+    left: calc(100% - #{$nav-padding} * 2);
+    width: .1em;
+  }
+
+  75% {
+    left: calc($nav-padding * 2);
+    width: .1em;
+  }
+
+  100% {
+    left: calc($nav-padding * 2);
+    width: 0;
+  }
+}
+
+@keyframes nav-inactive-line-dash-animation-for-after {
+  0% {
+    left: calc($nav-padding * 1.5);
+    width: 0;
+  }
+
+  25% {
+    left: calc($nav-padding * 1.5);
+    width: calc(100% - #{$nav-padding} * 3);
+  }
+
+  75% {
+    left: calc(100% - #{$nav-padding} * 1.5);
+    width: 0;
+  }
+}
+
+@keyframes nav-inactive-line-dash-animation-for-before {
+  0% {
+    left: calc($nav-padding * 1.5);
+    width: .1em;
+  }
+
+  25% {
+    left: calc(100% - #{$nav-padding} * 3);
+    width: .1em;
+  }
+
+  75% {
+    left: calc($nav-padding * 1.5);
+    width: .1em;
+  }
+
+  100% {
+    left: calc($nav-padding * 1.5);
+    width: 0;
+  }
+}
+
+@keyframes close-popup-animation-line5 {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  25% {
+    transform: translate(100%, -100%);
+    stroke-width: 0;
+  }
+
+  50% {
+    transform: translate(-100%, 100%);
+    stroke-width: 0;
+  }
+
+  75% {
+    transform: translate(0, 0);
+    stroke-width: .2em;
+  }
+}
+
+@keyframes close-popup-animation-line6 {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  25% {
+    transform: translate(100%, 100%);
+    stroke-width: 0;
+  }
+
+  50% {
+    transform: translate(-100%, -100%);
+    stroke-width: 0;
+  }
+
+  75% {
+    transform: translate(0, 0);
+    stroke-width: .2em;
+  }
+}

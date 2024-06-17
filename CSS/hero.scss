@@ -1,0 +1,565 @@
+// === Imports ===
+@import "config";
+@import "animations";
+
+
+// === Mixins ===
+@mixin desktop {
+  @media (min-width: $media-query-border) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: calc($media-query-border + 1px)) {
+    @content;
+  }
+}
+
+@mixin underline($nav-padding, $_underline-height, $color) {
+  content: '';
+  position: absolute;
+  left: calc(#{$nav-padding} * 1.5);
+  bottom: calc(#{$nav-padding} * 0.9);
+  width: 0;
+  height: $_underline-height;
+  background-color: $color;
+}
+
+@mixin underline-active($nav-padding, $_underline-height, $color) {
+  width: calc(100% - #{$nav-padding} * 3 - #{$_underline-height} * 2);
+  background-color: $color;
+}
+
+@mixin underline-active-before($nav-padding, $_underline-height, $color) {
+  left: calc(100% - #{$nav-padding} * 1.5 - #{$_underline-height});
+  width: $_underline-height;
+  background-color: $color;
+}
+
+// === Background Cover ===
+.background-cover {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding-inline: $global-inline-padding;
+
+  &.hero {
+    position: relative;
+    background-color: $bg-color;
+    background-image: url('../IMG/img-noise-361x370.png');
+    background-repeat: repeat;
+
+    #watermark {
+      opacity: 0.8;
+      position: absolute;
+      inset: 0;
+      background-image: url('../IMG/watermark.svg');
+      background-position: center;
+      background-size: cover;
+    }
+
+    #hero {
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      max-width: 1000px;
+      min-height: 100vh;
+      min-height: 100svh;
+      margin: 0 auto;
+
+      @include mobile {
+        flex-direction: column;
+        gap: 2rem;
+        justify-content: center;
+        padding-top: 10vw;
+      }
+
+      @include desktop {
+        gap: $global-inline-padding;
+        padding-top: 3.5rem;
+      }
+    }
+  }
+}
+
+// === Navigation ===
+nav {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  @include mobile {
+    overflow-y: hidden;
+    max-height: 3.5rem;
+    transition: max-height .2s;
+
+    &.unfolded {
+      max-height: calc(3rem * 6.5);
+    }
+  }
+
+  ul {
+    $_underline-height: .1em;
+    display: flex;
+    gap: clamp(0.5rem, calc(var($nav-padding) / 2), 1.5rem);
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background-color: rgba($bg-color, 0.7);
+    border-bottom: 1px solid rgba(255, 255, 255, .8);
+    font-family: 'Reem-Kufi', ui-sans-serif;
+    list-style: none;
+    backdrop-filter: blur(.3rem);
+
+    @include mobile {
+      flex-direction: column;
+    }
+
+    li:not(.challenge-me-button):not(.logo) {
+      $_li-active-animation-duration: .6s;
+      $_li-inactive-animation-duration: .4s;
+      cursor: pointer;
+      user-select: none;
+      position: relative;
+      padding: $nav-padding calc($nav-padding * 1.5);
+      color: $text-color;
+      transition: .1s;
+
+      &::after {
+        @include underline($nav-padding, $_underline-height, $text-color);
+      }
+
+      &::before {
+        @include underline($nav-padding, $_underline-height, $text-color);
+      }
+
+      &.active::after {
+        @include underline-active($nav-padding, $_underline-height, $primary-color);
+      }
+
+      &.active::before {
+        @include underline-active-before($nav-padding, $_underline-height, $primary-color);
+      }
+
+      &:not(.active) {
+        &.animate::after {
+          animation: nav-inactive-line-dash-animation-for-after $_li-inactive-animation-duration forwards;
+        }
+
+        &.animate::before {
+          animation: nav-inactive-line-dash-animation-for-before $_li-inactive-animation-duration forwards;
+        }
+      }
+
+      &.active {
+        color: $primary-color;
+
+        &.animate::after {
+          animation: nav-line-dash-animation-for-after $_li-active-animation-duration forwards;
+        }
+
+        &.animate::before {
+          animation: nav-line-dash-animation-for-before $_li-active-animation-duration forwards;
+        }
+      }
+
+      a {
+        all: unset;
+      }
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      height: 100%;
+
+      @include desktop {
+        position: absolute;
+        left: $global-inline-padding;
+      }
+
+      @include mobile {
+        margin: 1rem auto;
+      }
+
+      img {
+        cursor: pointer;
+        display: block;
+        height: 1.5rem;
+
+        &:hover {
+          filter: grayscale(1);
+        }
+      }
+    }
+
+    #hamburger-menu {
+      @include desktop {
+        display: none;
+      }
+
+      @include mobile {
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0 .5rem;
+
+        svg {
+          display: block;
+        }
+
+        line, g {
+          transition: .15s;
+          stroke: $text-color;
+          stroke-width: .15rem;
+        }
+
+        // hamburger svg animation
+        & .line1 {
+          transform: translateX(0%);
+        }
+
+        & .line2-group {
+          transform: translateX(0%);
+        }
+
+        & .line3 {
+          transform: translate(-100%, 100%);
+        }
+
+        & .line4-group {
+          transform: translate(-100%, -100%);
+        }
+
+        &.unfolded {
+          & .line1 {
+            transform: translateX(100%);
+          }
+
+          & .line2-group {
+            transform: translateX(-100%);
+          }
+
+          & .line3 {
+            transform: translate(0%, 0%);
+          }
+
+          & .line4-group {
+            transform: translate(0%, 0%);
+          }
+        }
+      }
+    }
+
+    .challenge-me-button {
+      @include desktop {
+        position: absolute;
+        inset: 0 $global-inline-padding 0 auto;
+      }
+
+      @include mobile {
+        width: 100%;
+        background-color: $text-color;
+      }
+
+      & #challenge-me {
+        $_btn-line-animation-duration: .5s;
+        cursor: pointer;
+        display: block;
+        position: relative;
+        height: 100%;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        background-color: $text-color;
+        border: none;
+        font-family: 'Reem-Kufi', ui-sans-serif;
+        color: $bg-color;
+
+        &::after {
+          @include underline($nav-padding, .1em, $bg-color);
+        }
+
+        &::before {
+          @include underline($nav-padding, .1em, $bg-color);
+        }
+
+        &.animate::after {
+          animation: nav-btn-line-dash-animation-for-after $_btn-line-animation-duration forwards;
+          animation-delay: 20ms;
+        }
+
+        &.animate::before {
+          animation: nav-btn-line-dash-animation-for-before $_btn-line-animation-duration forwards;
+        }
+      }
+    }
+  }
+}
+
+#introduction {
+  z-index: 1;
+  font-family: 'Reem-Kufi', ui-sans-serif;
+  color: $text-color;
+  @include desktop {
+    width: clamp(200px, 50%, 500px);
+  }
+  @include mobile {
+    width: 100%;
+  }
+  padding-block: 2rem;
+
+  h1 {
+    margin: 0 -2px clamp(1rem, 2vw + 1rem, 1.5rem) 0;
+    font-size: clamp(2.5rem, 4vw + 1rem, 4.5rem);
+    font-weight: normal;
+    letter-spacing: -.02em;
+  }
+
+  h2 {
+    margin: 0 0 clamp(1rem, 2vw + 1rem, 1.5rem) 0;
+    font-size: clamp(1.5rem, 2vw + 1rem, 3rem);
+    font-weight: normal;
+    line-height: clamp(1.5rem, 2vw + 1rem, 3.5rem);
+    letter-spacing: 0.01em;
+  }
+
+  p, a {
+    margin: 0 0 clamp(1rem, 2vw + 1rem, 1.5rem) 0;
+    font-size: clamp(1rem, 1.5vw + .3rem, 1.8rem);
+    line-height: clamp(1rem, 1.5vw + .8rem, 2rem);
+  }
+
+  .challenge-me-a {
+    $_underline-height: .1em;
+    $_btn-line-animation-duration: .6s;
+    position: relative;
+    color: $primary-color;
+    text-decoration: none;
+    letter-spacing: -.01;
+
+    &::after, &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -.1em;
+      width: calc(100% - #{$_underline-height} * 2);
+      height: $_underline-height;
+      background-color: $primary-color;
+    }
+
+    &::before {
+      left: calc(100% - #{$_underline-height});
+      width: $_underline-height;
+    }
+
+    &.animate::after {
+      animation: line-dash-animation-for-after $_btn-line-animation-duration forwards;
+    }
+
+    &.animate::before {
+      animation: line-dash-animation-for-before $_btn-line-animation-duration forwards;
+    }
+  }
+
+  .no-break {
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  .span-bolder {
+    font-weight: 500;
+  }
+}
+
+#hero-grid {
+  $_transition-time: .1s;
+  display: grid;
+  gap: 1rem;
+  z-index: 1;
+  width: auto;
+  margin: 6rem 0 5rem 0;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  aspect-ratio: 1 / 1;
+  @include mobile {
+    margin: 0 0 5rem 0;
+  }
+
+  & > * {
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    background-color: $bg-color;
+    outline: 1px solid $bg-color;
+    transition: outline $_transition-time;
+
+    & > .hero-gallery-image {
+      cursor: pointer;
+      width: 100%;
+      height: 100%;
+      transition: transform $_transition-time, filter $_transition-time;
+      object-fit: cover;
+    }
+
+    &:hover {
+      outline: 1px solid $text-color;
+
+      &::after {
+        opacity: 0 !important;
+      }
+
+      & > .hero-gallery-image {
+        transform: scale(1.2);
+        filter: grayscale(0) !important;
+      }
+
+      & > .expand-icon {
+        opacity: 1;
+      }
+    }
+  }
+
+  & #placeholder-big::after, & #placeholder-small::after {
+    content: '';
+    pointer-events: none;
+    opacity: .4;
+    position: absolute;
+    inset: 0;
+    transition: opacity $_transition-time;
+  }
+
+  & #placeholder-big {
+    grid-column: 1 / -1;
+    grid-row: 2;
+
+    & .hero-gallery-image {
+      filter: grayscale(1);
+    }
+
+    &::after {
+      background-color: $text-color;
+    }
+  }
+
+  & #placeholder-medium {
+    grid-column: 1 / span 2;
+  }
+
+  & #placeholder-small {
+    grid-column: 3 / -1;
+    grid-row: 1;
+
+    & .hero-gallery-image {
+      filter: grayscale(1);
+    }
+
+    &::after {
+      background-color: #1100FA;
+    }
+  }
+
+  & .expand-icon {
+    pointer-events: none;
+    opacity: 0;
+    z-index: 3;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    transition: opacity $_transition-time;
+  }
+}
+
+#media-popup-viewer {
+  $_animation-duration: .5s;
+  z-index: 100;
+  position: fixed;
+  inset: 5rem;
+  background-color: $text-color;
+  outline: 1px solid $bg-color;
+  transition: transform .3s;
+  transform: translateX(-150%);
+
+  &.active {
+    transform: translateX(0);
+  }
+
+  svg {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    filter: drop-shadow(0 0 5px $text-color);
+
+    &.animate {
+      & > .line5 {
+        animation: close-popup-animation-line5 $_animation-duration forwards;
+      }
+
+      & > .line6-group {
+        animation: close-popup-animation-line6 $_animation-duration forwards;
+      }
+    }
+  }
+
+  line {
+    stroke: $bg-color;
+    stroke-width: .2em;
+  }
+
+  & #media-displayer {
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      box-shadow: 0 0 10px black;
+      object-fit: contain;
+    }
+  }
+
+  & #gallery-item-bar {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 5rem;
+    padding: 1rem;
+    background-color: rgba($text-color, .5);
+    backdrop-filter: blur(1rem);
+
+    img {
+      cursor: pointer;
+      display: inline-block;
+      height: 100%;
+      margin: 0 .5rem;
+      outline: 1px solid $bg-color;
+      transition: filter .3s;
+
+      &:not(.active) {
+        filter: brightness(.5);
+      }
+    }
+  }
+}
+
+// Because problems with z-index on pseudo-elements and children
+#dim-website {
+  z-index: 99;
+  position: fixed;
+  inset: -5rem;
+  background-color: rgba($text-color, .5);
+
+  transition: transform .3s;
+  transform: translateX(-150%);
+
+  &.active {
+    transform: translateX(0);
+  }
+}

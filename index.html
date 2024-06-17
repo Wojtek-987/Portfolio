@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Portfolio | Maciej Wojciechowski</title>
+        <meta name="theme-color" content="#1100FA">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <link rel="icon" type="image/svg+xml" href="IMG/icon.svg">
+        <link rel="apple-touch-icon" href="IMG/icon.svg">
+
+        <meta name="description" content="Portfolio for Maciej Wojciechowski, a web developer, UI/UX designer, and audio engineer">
+        <meta name="author" content="Maciej Wojciechowski">
+        <meta name="googlebot" content="noimageindex">
+        <meta name="robots" content="index, follow">
+
+        <meta property="og:title" content="Portfolio | Maciej Wojciechowski">
+        <meta property="og:description" content="Portfolio for Maciej Wojciechowski, a web developer, UI/UX designer, and audio engineer">
+        <meta property="og:image" content="IMG/og-image.jpg">
+<!--        <meta property="og:url" content="https://www.yourwebsite.com">-->
+
+        <link rel="stylesheet" href="CSS/hero.css">
+
+        <script src="JS/hero-section.js" defer></script>
+    </head>
+    <body>
+        <header style="all: unset;">
+            <nav>
+                <ul>
+                    <li class="logo"><a href="https://github.com/Wojtek-987" target="_blank"><img src="IMG/logo.svg" alt="logo" title="GitHub"></a></li>
+                    <li class="active menu-item"><a href="#start">Start Here</a></li>
+                    <li class="menu-item"><a href="#story">My Story</a></li>
+                    <li class="menu-item"><a href="#portfolio">Portfolio</a></li>
+                    <li class="challenge-me-button"><button id="challenge-me">Challenge me.</button></li>
+                    <li id="hamburger-menu">
+                        <button aria-label="Open menu" style="all: unset">
+                            <svg width="3.5rem" height="3.5rem" viewBox="0 0 3.5rem 3.5rem">
+                                <line class="line1" x1=".75rem" y1="1.3rem" x2="2.75rem" y2="1.3rem"></line>
+                                <g class="line2-group">
+                                    <line class="line2" x1=".75rem" y1="2.2rem" x2="2.45rem" y2="2.2rem"></line>
+                                    <line class="dot" x1="2.6rem" y1="2.2rem" x2="2.75rem" y2="2.2rem"></line>
+                                </g>
+                                <line class="line3" x1="1rem" y1="2.5rem" x2="2.5rem" y2="1rem"></line>
+                                <g class="line4-group">
+                                    <line class="line4" x1="1rem" y1="1rem" x2="2.3rem" y2="2.3rem"></line>
+                                    <line class="dot2" x1="2.4rem" y1="2.4rem" x2="2.51rem" y2="2.51rem"></line>
+                                </g>
+                            </svg>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="background-cover hero" id="start">
+            <div id="watermark"></div>
+            <section id="hero">
+<!--                change header -->
+                <div id="introduction">
+                    <h1>Welcome</h1>
+                    <h2>My name is <span class="no-break">Maciej <wbr>Wojciechowski</span></h2>
+                    <p><span class="no-break">I <span class="span-bolder">build</span> sleek websites,</span> <span class="no-break"><span class="span-bolder">design</span> effective interfaces,</span> <span class="no-break">and <span class="span-bolder">craft</span> sound.</span></p>
+                    <a href="#" class="challenge-me-a">Challenge me.</a>
+                </div>
+                <aside id="hero-grid">
+                    <div id="placeholder-medium" class="hero-gallery-tile">
+                        <img class="hero-gallery-image" src="https://picsum.photos/500/250" alt="">
+                        <img class="expand-icon" src="IMG/expand.svg" />
+                    </div>
+                    <div id="placeholder-small" class="hero-gallery-tile">
+                        <img class="hero-gallery-image" src="https://picsum.photos/500/500" alt="">
+                        <img class="expand-icon" src="IMG/expand.svg" />
+                    </div>
+                    <div id="placeholder-big" class="hero-gallery-tile">
+                        <img class="hero-gallery-image" src="https://picsum.photos/600/200" alt="">
+                        <img class="expand-icon" src="IMG/expand.svg" />
+                    </div>
+                </aside>
+            </section>
+        </main>
+        <div id="media-popup-viewer">
+            <svg id="media-popup-close" width="3.5rem" height="3.5rem" viewBox="0 0 3.5rem 3.5rem">
+                <line class="line5" x1="1rem" y1="2.5rem" x2="2.5rem" y2="1rem"></line>
+                <g class="line6-group">
+                    <line class="line6" x1="1rem" y1="1rem" x2="2.3rem" y2="2.3rem"></line>
+                    <line class="dot3" x1="2.4rem" y1="2.4rem" x2="2.51rem" y2="2.51rem"></line>
+                </g>
+            </svg>
+            <div id="media-displayer">
+                <img src="https://picsum.photos/500/300" />
+            </div>
+            <div id="gallery-item-bar">
+                <img class="gallery-item-bar-image active" src="https://picsum.photos/500/250" />
+                <img class="gallery-item-bar-image" src="https://picsum.photos/500/500" />
+                <img class="gallery-item-bar-image" src="https://picsum.photos/600/200" />
+            </div>
+        </div>
+        <div id="dim-website"></div>
+        <div class="background-cover">
+            <div style="text-align: center; font-size: 30pt; margin-block: 100px; color: red;">
+                UNDER CONSTRUCTION
+            </div>
+        </div>
+        <footer></footer>
+    </body>
+</html>
+
+<!--
+    TODO:
+
+    - add the about section
+    - add the projects section
+    - add the contact form as a separate page
+    - add a footer with links
+-->
