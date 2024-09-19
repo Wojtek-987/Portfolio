@@ -11,9 +11,9 @@
   src: url("../FONT/Sen/Sen-VariableFont_wght.ttf") format("truetype");
 }
 html, body {
+  background-color: #F1F1FF;
   margin: 0;
   padding: 0;
-  background-color: #F1F1FF;
   scroll-behavior: smooth;
   scrollbar-color: #1100FA;
 }
@@ -176,33 +176,33 @@ html, body {
 }
 .background-cover {
   box-sizing: border-box;
-  width: 100%;
   min-height: 100vh;
   min-height: 100svh;
   padding-inline: clamp(10px, 12vw, 200px);
+  width: 100%;
 }
 .background-cover.hero {
-  position: relative;
   background-color: #F1F1FF;
   background-image: url("../IMG/img-noise-361x370.png");
   background-repeat: repeat;
+  position: relative;
 }
 .background-cover.hero #watermark {
-  opacity: 0.8;
-  position: absolute;
-  inset: 0;
   background-image: url("../IMG/watermark.svg");
   background-position: center;
   background-size: cover;
+  inset: 0;
+  opacity: 0.8;
+  position: absolute;
 }
 .background-cover.hero #hero {
+  align-items: center;
   box-sizing: border-box;
   display: flex;
-  align-items: center;
-  max-width: 1000px;
-  min-height: 100vh;
-  min-height: 100svh;
   margin: 0 auto;
+  max-width: 1000px;
+  min-height: 100svh;
+  min-height: 100vh;
 }
 @media (max-width: 901px) {
   .background-cover.hero #hero {
@@ -220,17 +220,17 @@ html, body {
 }
 
 nav {
-  z-index: 10;
+  margin: 0;
+  padding: 0;
   position: fixed;
   top: 0;
   width: 100%;
-  margin: 0;
-  padding: 0;
+  z-index: 10;
 }
 @media (max-width: 901px) {
   nav {
-    overflow-y: hidden;
     max-height: 3.5rem;
+    overflow-y: hidden;
     transition: max-height 0.2s;
   }
   nav.unfolded {
@@ -238,17 +238,17 @@ nav {
   }
 }
 nav ul {
-  display: flex;
-  gap: clamp(0.5rem, var(1rem) / 2, 1.5rem);
-  justify-content: center;
   align-items: center;
-  margin: 0;
-  padding: 0;
+  backdrop-filter: blur(0.3rem);
   background-color: rgba(241, 241, 255, 0.7);
   border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+  display: flex;
   font-family: "Reem-Kufi", ui-sans-serif;
+  gap: clamp(0.5rem, var(1rem) / 2, 1.5rem);
+  justify-content: center;
   list-style: none;
-  backdrop-filter: blur(0.3rem);
+  margin: 0;
+  padding: 0;
 }
 @media (max-width: 901px) {
   nav ul {
@@ -256,12 +256,12 @@ nav ul {
   }
 }
 nav ul li:not(.challenge-me-button):not(.logo) {
-  cursor: pointer;
-  user-select: none;
-  position: relative;
-  padding: 1rem 1.5rem;
   color: #070709;
+  cursor: pointer;
+  padding: 1rem 1.5rem;
+  position: relative;
   transition: 0.1s;
+  user-select: none;
 }
 nav ul li:not(.challenge-me-button):not(.logo)::after {
   content: "";
@@ -309,14 +309,14 @@ nav ul li:not(.challenge-me-button):not(.logo) a {
   all: unset;
 }
 nav ul .logo {
-  display: flex;
   align-items: center;
+  display: flex;
   height: 100%;
 }
 @media (min-width: 900px) {
   nav ul .logo {
-    position: absolute;
     left: clamp(10px, 12vw, 200px);
+    position: absolute;
   }
 }
 @media (max-width: 901px) {
@@ -340,18 +340,18 @@ nav ul .logo img:hover {
 @media (max-width: 901px) {
   nav ul #hamburger-menu {
     overflow: hidden;
-    position: absolute;
-    top: 0;
-    right: 0;
     padding: 0 0.5rem;
+    position: absolute;
+    right: 0;
+    top: 0;
   }
   nav ul #hamburger-menu svg {
     display: block;
   }
   nav ul #hamburger-menu line, nav ul #hamburger-menu g {
-    transition: 0.15s;
     stroke: #070709;
     stroke-width: 0.15rem;
+    transition: 0.15s;
   }
   nav ul #hamburger-menu .line1 {
     transform: translateX(0%);
@@ -380,27 +380,27 @@ nav ul .logo img:hover {
 }
 @media (min-width: 900px) {
   nav ul .challenge-me-button {
-    position: absolute;
     inset: 0 clamp(10px, 12vw, 200px) 0 auto;
+    position: absolute;
   }
 }
 @media (max-width: 901px) {
   nav ul .challenge-me-button {
-    width: 100%;
     background-color: #070709;
+    width: 100%;
   }
 }
 nav ul .challenge-me-button #challenge-me {
+  background-color: #070709;
+  border: none;
+  color: #F1F1FF;
   cursor: pointer;
   display: block;
-  position: relative;
+  font-family: "Reem-Kufi", ui-sans-serif;
   height: 100%;
   margin: 0 auto;
   padding: 1rem 2rem;
-  background-color: #070709;
-  border: none;
-  font-family: "Reem-Kufi", ui-sans-serif;
-  color: #F1F1FF;
+  position: relative;
 }
 nav ul .challenge-me-button #challenge-me::after {
   content: "";
@@ -429,10 +429,10 @@ nav ul .challenge-me-button #challenge-me.animate::before {
 }
 
 #introduction {
-  z-index: 1;
-  font-family: "Reem-Kufi", ui-sans-serif;
   color: #070709;
+  font-family: "Reem-Kufi", ui-sans-serif;
   padding-block: 2rem;
+  z-index: 1;
 }
 @media (min-width: 900px) {
   #introduction {
@@ -445,37 +445,37 @@ nav ul .challenge-me-button #challenge-me.animate::before {
   }
 }
 #introduction h1 {
-  margin: 0 -2px clamp(1rem, 2vw + 1rem, 1.5rem) 0;
   font-size: clamp(2.5rem, 4vw + 1rem, 4.5rem);
   font-weight: normal;
   letter-spacing: -0.02em;
+  margin: 0 -2px clamp(1rem, 2vw + 1rem, 1.5rem) 0;
 }
 #introduction h2 {
-  margin: 0 0 clamp(1rem, 2vw + 1rem, 1.5rem) 0;
   font-size: clamp(1.5rem, 2vw + 1rem, 3rem);
   font-weight: normal;
-  line-height: clamp(1.5rem, 2vw + 1rem, 3.5rem);
   letter-spacing: 0.01em;
+  line-height: clamp(1.5rem, 2vw + 1rem, 3.5rem);
+  margin: 0 0 clamp(1rem, 2vw + 1rem, 1.5rem) 0;
 }
 #introduction p, #introduction a {
-  margin: 0 0 clamp(1rem, 2vw + 1rem, 1.5rem) 0;
   font-size: clamp(1rem, 1.5vw + 0.3rem, 1.8rem);
   line-height: clamp(1rem, 1.5vw + 0.8rem, 2rem);
+  margin: 0 0 clamp(1rem, 2vw + 1rem, 1.5rem) 0;
 }
 #introduction .challenge-me-a {
-  position: relative;
   color: #1100FA;
-  text-decoration: none;
   letter-spacing: -0.01;
+  position: relative;
+  text-decoration: none;
 }
 #introduction .challenge-me-a::after, #introduction .challenge-me-a::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -0.1em;
-  width: calc(100% - 0.1em * 2);
-  height: 0.1em;
   background-color: #1100FA;
+  bottom: -0.1em;
+  content: "";
+  height: 0.1em;
+  left: 0;
+  position: absolute;
+  width: calc(100% - 0.1em * 2);
 }
 #introduction .challenge-me-a::before {
   left: calc(100% - 0.1em);
@@ -496,14 +496,14 @@ nav ul .challenge-me-button #challenge-me.animate::before {
 }
 
 #hero-grid {
+  aspect-ratio: 1/1;
   display: grid;
   gap: 1rem;
-  z-index: 1;
-  width: auto;
-  margin: 6rem 0 5rem 0;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  aspect-ratio: 1/1;
+  margin: 6rem 0 5rem 0;
+  width: auto;
+  z-index: 1;
 }
 @media (max-width: 901px) {
   #hero-grid {
@@ -511,19 +511,19 @@ nav ul .challenge-me-button #challenge-me.animate::before {
   }
 }
 #hero-grid > * {
+  background-color: #F1F1FF;
+  height: 100%;
+  outline: 1px solid #F1F1FF;
   overflow: hidden;
   position: relative;
-  height: 100%;
-  background-color: #F1F1FF;
-  outline: 1px solid #F1F1FF;
   transition: outline 0.1s;
 }
 #hero-grid > * > .hero-gallery-image {
   cursor: pointer;
-  width: 100%;
   height: 100%;
-  transition: transform 0.1s, filter 0.1s;
   object-fit: cover;
+  transition: transform 0.1s, filter 0.1s;
+  width: 100%;
 }
 #hero-grid > *:hover {
   outline: 1px solid #070709;
@@ -532,18 +532,18 @@ nav ul .challenge-me-button #challenge-me.animate::before {
   opacity: 0 !important;
 }
 #hero-grid > *:hover > .hero-gallery-image {
-  transform: scale(1.2);
   filter: grayscale(0) !important;
+  transform: scale(1.2);
 }
 #hero-grid > *:hover > .expand-icon {
   opacity: 1;
 }
 #hero-grid #placeholder-big::after, #hero-grid #placeholder-small::after {
   content: "";
-  pointer-events: none;
-  opacity: 0.4;
-  position: absolute;
   inset: 0;
+  opacity: 0.4;
+  pointer-events: none;
+  position: absolute;
   transition: opacity 0.1s;
 }
 #hero-grid #placeholder-big {
@@ -570,32 +570,32 @@ nav ul .challenge-me-button #challenge-me.animate::before {
   background-color: #1100FA;
 }
 #hero-grid .expand-icon {
-  pointer-events: none;
   opacity: 0;
-  z-index: 3;
+  pointer-events: none;
   position: absolute;
-  top: 1rem;
   right: 1rem;
+  top: 1rem;
   transition: opacity 0.1s;
+  z-index: 3;
 }
 
 #media-popup-viewer {
-  z-index: 100;
-  position: fixed;
-  inset: 5rem;
   background-color: #070709;
+  inset: 5rem;
   outline: 1px solid #F1F1FF;
-  transition: transform 0.3s;
+  position: fixed;
   transform: translateX(-150%);
+  transition: transform 0.3s;
+  z-index: 100;
 }
 #media-popup-viewer.active {
   transform: translateX(0);
 }
 #media-popup-viewer svg {
   cursor: pointer;
+  filter: drop-shadow(0 0 5px #070709);
   position: absolute;
   right: 0;
-  filter: drop-shadow(0 0 5px #070709);
 }
 #media-popup-viewer svg.animate > .line5 {
   animation: close-popup-animation-line5 0.5s forwards;
@@ -611,21 +611,21 @@ nav ul .challenge-me-button #challenge-me.animate::before {
   height: 100%;
 }
 #media-popup-viewer #media-displayer img {
-  width: 100%;
-  height: 100%;
   box-shadow: 0 0 10px black;
+  height: 100%;
   object-fit: contain;
+  width: 100%;
 }
 #media-popup-viewer #gallery-item-bar {
+  backdrop-filter: blur(1rem);
+  background-color: rgba(7, 7, 9, 0.5);
   box-sizing: border-box;
   display: flex;
-  justify-content: center;
-  position: absolute;
-  inset: auto 0 0 0;
   height: 5rem;
+  inset: auto 0 0 0;
+  justify-content: center;
   padding: 1rem;
-  background-color: rgba(7, 7, 9, 0.5);
-  backdrop-filter: blur(1rem);
+  position: absolute;
 }
 #media-popup-viewer #gallery-item-bar img {
   cursor: pointer;
@@ -640,12 +640,12 @@ nav ul .challenge-me-button #challenge-me.animate::before {
 }
 
 #dim-website {
-  z-index: 99;
-  position: fixed;
-  inset: -5rem;
   background-color: rgba(7, 7, 9, 0.5);
-  transition: transform 0.3s;
+  inset: -5rem;
+  position: fixed;
   transform: translateX(-150%);
+  transition: transform 0.3s;
+  z-index: 99;
 }
 #dim-website.active {
   transform: translateX(0);

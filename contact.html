@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Contact | Maciej Wojciechowski</title>
+        <meta name="theme-color" content="#1100FA">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <link rel="icon" type="image/svg+xml" href="IMG/icon.svg">
+        <link rel="apple-touch-icon" href="IMG/icon.svg">
+
+        <meta name="googlebot" content="noimageindex">
+
+        <link rel="stylesheet" href="CSS/contact.css">
+
+        <script src="JS/contact.js" defer></script>
+    </head>
+    <body>
+        <div id="watermark"></div>
+        <form>
+            <h1>Challenge me.</h1>
+            <span>
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" autofocus>
+            </span>
+
+            <span>
+                <label for="sender-email">Your email:</label>
+                <input type="text" id="sender-email" name="sender-email">
+            </span>
+
+            <span>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message"></textarea>
+            </span>
+
+            <button type="submit">
+                <svg width="1rem" height="1rem" viewBox="0 0 1rem 1rem">
+                    <line class="svg-send-line" x1=".2rem" y1="0" x2=".8rem" y2=".55rem" />
+                    <line class="svg-send-line" x1=".2rem" y1="1rem" x2=".5rem" y2=".68rem" />
+                </svg>
+            </button>
+        </form>
+    </body>
+</html>

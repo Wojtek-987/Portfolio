@@ -57,6 +57,12 @@ function toggleMenu(menuItemCandidate) {
     menuItemCandidate.classList.toggle("active");
 }
 
+
+const challengeMeButton = document.querySelector('#challenge-me');
+challengeMeButton.addEventListener('click', () => {
+    window.location = 'contact.html';
+});
+
 // === GALLERY ZOOM ===
 const galleryTiles = document.querySelectorAll(".hero-gallery-tile");
 
