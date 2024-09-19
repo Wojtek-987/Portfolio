@@ -21,5 +21,9 @@ html, body {
 #my-story-container {
   background-color: #070709;
 }
+#my-story-container *::selection {
+  background-color: #F1F1FF;
+  color: #070709;
+}
 
 /*# sourceMappingURL=my-story.css.map */

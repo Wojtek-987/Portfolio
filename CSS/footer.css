@@ -38,6 +38,9 @@ footer #footer-grid > * {
   flex: 1;
   min-width: 20ch;
 }
+footer h3 {
+  font-size: 1.5em;
+}
 footer ul {
   list-style-type: none;
   margin: 0;
@@ -71,6 +74,11 @@ footer ul li#copy-to-clipboard {
 }
 footer ul li#copy-to-clipboard:hover {
   text-decoration: underline;
+}
+footer .greyed-text-contrast {
+  display: block;
+  font-size: 0.9em;
+  text-align: center;
 }
 
 /*# sourceMappingURL=footer.css.map */

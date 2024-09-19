@@ -2,4 +2,9 @@
 
 #my-story-container {
   background-color: $text-color;
+
+  & *::selection {
+    background-color: $bg-color;
+    color: $text-color;
+  }
 }

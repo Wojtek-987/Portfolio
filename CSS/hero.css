@@ -604,7 +604,11 @@ nav ul .challenge-me-button #challenge-me.animate::before {
   }
 }
 #media-popup-viewer.active {
+  visibility: visible;
   transform: translateX(0);
+}
+#media-popup-viewer.invisible {
+  visibility: hidden;
 }
 #media-popup-viewer svg {
   cursor: pointer;
@@ -671,6 +675,9 @@ nav ul .challenge-me-button #challenge-me.animate::before {
 }
 #dim-website.active {
   transform: translateX(0);
+}
+#dim-website.invisible {
+  visibility: hidden;
 }
 
 /*# sourceMappingURL=hero.css.map */

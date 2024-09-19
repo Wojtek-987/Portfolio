@@ -76,11 +76,16 @@ function handleGalleryMouseMove(e) {
     this.children[0].style.transformOrigin = `${e.clientX - rect.left}px ${e.clientY - rect.top}px`;
 }
 
+let galleryVisibilityTimeout;
+
 function handleGalleryTileClick() {
     if(window.innerWidth <= 500) return;
 
     mediaPopupViewer.classList.add("active");
+    clearTimeout(galleryVisibilityTimeout);
+    mediaPopupViewer.classList.remove("invisible");
     dimWebsite.classList.add("active");
+    dimWebsite.classList.remove("invisible");
 
     changeImageInPopup(this.children[0]);
 
@@ -98,9 +103,14 @@ mediaCloseButton.addEventListener("click", closeMediaPopup);
 mediaCloseButton.addEventListener("mouseenter", handleMenuMouseEnter);
 mediaCloseButton.addEventListener("animationend", handleMenuAnimationEnd);
 
+
 function closeMediaPopup() {
     mediaPopupViewer.classList.remove("active");
     dimWebsite.classList.remove("active");
+    galleryVisibilityTimeout = setTimeout(() => {
+        mediaPopupViewer.classList.add('invisible');
+        dimWebsite.classList.add('invisible');
+    }, 500);
 }
 
 function changeImageInPopup(img) {
@@ -122,6 +132,14 @@ function toggleGalleryItemBar(candidateImage) {
     if (activeImage) activeImage.classList.remove("active");
     candidateImage.classList.add("active");
 }
+
+// Close popup on [Escape]
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' || event.key === 'Esc') {
+        if(mediaPopupViewer.classList.contains('active'))
+            closeMediaPopup();
+    }
+});
 
 
 // === Get current year for footer copyright ===

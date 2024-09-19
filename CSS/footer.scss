@@ -23,6 +23,10 @@ footer {
     }
   }
 
+  h3 {
+    font-size: 1.5em;
+  }
+
   ul {
     list-style-type: none;
     margin: 0;
@@ -62,5 +66,11 @@ footer {
         }
       }
     }
+  }
+
+  .greyed-text-contrast {
+    display: block;
+    font-size: .9em;
+    text-align: center;
   }
 }
