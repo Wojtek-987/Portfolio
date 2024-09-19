@@ -174,6 +174,10 @@ html, body {
     stroke-width: 0.2em;
   }
 }
+.greyed-text-contrast {
+  color: #666666;
+}
+
 .background-cover {
   box-sizing: border-box;
   min-height: 100vh;
@@ -578,15 +582,26 @@ nav ul .challenge-me-button #challenge-me.animate::before {
   transition: opacity 0.1s;
   z-index: 3;
 }
+@media (max-width: 500px) {
+  #hero-grid .expand-icon {
+    display: none !important;
+  }
+}
 
 #media-popup-viewer {
   background-color: #070709;
   inset: 5rem;
   outline: 1px solid #F1F1FF;
+  overflow: hidden;
   position: fixed;
   transform: translateX(-150%);
   transition: transform 0.3s;
   z-index: 100;
+}
+@media (max-width: 500px) {
+  #media-popup-viewer {
+    display: none !important;
+  }
 }
 #media-popup-viewer.active {
   transform: translateX(0);
@@ -598,10 +613,10 @@ nav ul .challenge-me-button #challenge-me.animate::before {
   right: 0;
 }
 #media-popup-viewer svg.animate > .line5 {
-  animation: close-popup-animation-line5 0.5s forwards;
+  animation: close-popup-animation-line5 0.3s forwards;
 }
 #media-popup-viewer svg.animate > .line6-group {
-  animation: close-popup-animation-line6 0.5s forwards;
+  animation: close-popup-animation-line6 0.3s forwards;
 }
 #media-popup-viewer line {
   stroke: #F1F1FF;
@@ -624,6 +639,8 @@ nav ul .challenge-me-button #challenge-me.animate::before {
   height: 5rem;
   inset: auto 0 0 0;
   justify-content: center;
+  overflow-x: auto;
+  overflow-y: hidden;
   padding: 1rem;
   position: absolute;
 }
@@ -646,6 +663,11 @@ nav ul .challenge-me-button #challenge-me.animate::before {
   transform: translateX(-150%);
   transition: transform 0.3s;
   z-index: 99;
+}
+@media (max-width: 500px) {
+  #dim-website {
+    display: none !important;
+  }
 }
 #dim-website.active {
   transform: translateX(0);

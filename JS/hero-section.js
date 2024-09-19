@@ -77,6 +77,8 @@ function handleGalleryMouseMove(e) {
 }
 
 function handleGalleryTileClick() {
+    if(window.innerWidth <= 500) return;
+
     mediaPopupViewer.classList.add("active");
     dimWebsite.classList.add("active");
 
@@ -120,3 +122,18 @@ function toggleGalleryItemBar(candidateImage) {
     if (activeImage) activeImage.classList.remove("active");
     candidateImage.classList.add("active");
 }
+
+
+// === Get current year for footer copyright ===
+const year = new Date().getFullYear();
+const yearSpan = document.querySelector('#current-year');
+yearSpan.innerHTML = year.toString();
+
+const copyEmail = document.querySelector('#copy-to-clipboard');
+copyEmail.addEventListener('mouseup', () => {
+    navigator.clipboard.writeText(copyEmail.textContent).then(() => {
+        console.info('Email copied to clipboard');
+    }).catch(err => {
+        console.error('Failed to copy text: ', err);
+    });
+});

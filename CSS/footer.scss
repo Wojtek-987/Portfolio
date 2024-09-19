@@ -1,0 +1,66 @@
+@import "config";
+
+footer {
+  background-color: $text-color;
+  color: $bg-color;
+  font-family: "Reem-Kufi", ui-sans-serif;
+  padding: 5em $global-inline-padding;
+
+  & *::selection {
+    background-color: $bg-color;
+    color: $text-color;
+  }
+
+  #footer-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    margin-bottom: 8em;
+
+    & > * {
+      flex: 1;
+      min-width: 20ch;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 1em;
+
+    li {
+      padding-block: .2em;
+      position: relative;
+
+      &::before {
+        background-image: url('../IMG/ul-bullets.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        content: '';
+        height: 10px;
+        left: -13px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 10px;
+      }
+
+      a {
+        color: $bg-color;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      &#copy-to-clipboard {
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

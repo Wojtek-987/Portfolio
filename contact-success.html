@@ -21,7 +21,7 @@
     <form>
         <h1>Success!</h1>
         <p>
-            Your challenge has been sent!
+            <span class="no-flex">Your challenge has been sent! You will be redirected to the homepage in: <span class="no-flex" id="timer">-</span>s</span>
             <a href="index.html">
                 Take me back
                 <svg width="1rem" height="1rem" viewBox="0 0 1rem 1rem">
@@ -30,7 +30,21 @@
                 </svg>
             </a>
         </p>
+        <script>
+            const timerSpan = document.querySelector('#timer');
+            let counter = 10;
 
+            timerSpan.innerHTML = counter.toString();
+
+            setInterval(() => {
+                counter--;
+
+                if(counter < 1)
+                    window.location = "index.html";
+
+                timerSpan.innerHTML = counter.toString();
+            }, 1000);
+        </script>
     </form>
 </body>
 </html>

@@ -47,6 +47,7 @@ form {
   font-family: "Reem-Kufi", ui-sans-serif;
   font-size: clamp(1rem, 1.5vw + 0.3rem, 1.8rem);
   margin: auto;
+  margin-block: 3em;
   max-width: 500px;
   padding: 1em;
   position: relative;
@@ -61,11 +62,11 @@ form h1 {
   margin-bottom: 2em;
   user-select: none;
 }
-form span {
+form span:not(.no-flex) {
   display: flex;
   flex-direction: column;
 }
-form span input, form span textarea {
+form span:not(.no-flex) input, form span:not(.no-flex) textarea {
   border: 2px solid #070709;
   box-sizing: border-box;
   font-family: monospace;
@@ -73,11 +74,11 @@ form span input, form span textarea {
   margin-bottom: 1em;
   padding: 0.5em;
 }
-form span:focus-within input, form span:focus-within textarea {
+form span:not(.no-flex):focus-within input, form span:not(.no-flex):focus-within textarea {
   border-color: #1100FA;
   outline: none;
 }
-form span:focus-within label {
+form span:not(.no-flex):focus-within label {
   color: #1100FA;
 }
 form textarea {

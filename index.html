@@ -16,6 +16,9 @@
         <meta name="robots" content="index, follow">
 
         <link rel="stylesheet" href="CSS/hero.css">
+        <link rel="stylesheet" href="CSS/my-story.css">
+        <link rel="stylesheet" href="CSS/projects.css">
+        <link rel="stylesheet" href="CSS/footer.css">
 
         <script src="JS/hero-section.js" defer></script>
     </head>
@@ -90,12 +93,35 @@
             </div>
         </div>
         <div id="dim-website"></div>
-        <div class="background-cover">
-            <div style="text-align: center; font-size: 30pt; margin-block: 100px; color: red;">
+        <div class="background-cover" id="my-story-container">
+            <div style="text-align: center; font-size: 30pt; padding-block: 100px; color: red;">
                 UNDER CONSTRUCTION
             </div>
         </div>
-        <footer></footer>
+        <div class="background-cover hero" id="projects-container">
+
+        </div>
+        <footer>
+            <div id="footer-grid">
+                <div>
+                    <h3>My links:</h3>
+                    <ul>
+                        <li><a href="https://www.facebook.com/W0JTEK987">Facebook</a></li>
+                        <li><a href="https://www.instagram.com/w0jtek987/">Instagram</a></li>
+                        <li><a href="https://github.com/Wojtek-987">Github</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Contact:</h3>
+                    <ul>
+                        <li><a href="contact.html">Contact form</a></li>
+                        <li title="Copy to clipboard" id="copy-to-clipboard">maciej.woj05@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <span class="greyed-text-contrast">All Rights Reserved - Maciej Wojciechowski <span id="current-year"></span> &copy;</span>
+        </footer>
     </body>
 </html>
 
@@ -104,6 +130,6 @@
 
     - add the about section
     - add the projects section
-    - add the contact form as a separate page
-    - add a footer with links
+    - make the contact form send emails
+
 -->
