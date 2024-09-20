@@ -17,6 +17,7 @@
 
         <script type="module" src="JS/imports.js"></script>
         <script type="module" src="JS/hero-section.js"></script>
+        <script type="module" src="JS/footer.js"></script>
     </head>
     <body>
         <header style="all: unset;">
@@ -46,7 +47,7 @@
                 </ul>
             </nav>
         </header>
-        <main class="background-cover hero" id="start">
+        <main class="background-cover grain" id="start">
             <div id="watermark"></div>
             <section id="hero">
                 <div id="introduction">
@@ -89,24 +90,44 @@
             </div>
         </div>
         <div id="dim-website" class="invisible"></div>
-        <div class="background-cover hero" id="my-story-container">
-            <div style="text-align: center; font-size: 30pt; padding-block: 100px; color: red;">
-                UNDER CONSTRUCTION - My Story
-            </div>
-        </div>
-        <div class="background-cover hero" id="projects-container">
-            <div style="text-align: center; font-size: 30pt; padding-block: 100px; color: red;">
+        <section class="grain" id="my-story-container">
+            <aside>
+                <h2>Who I am</h2>
+                <p>
+                    I started programming as a young teen, starting from <a href="https://scratch.mit.edu/">Scratch</a> &mdash; and that sentiment persisted throughout my journey. I've always preferred to understand everything to the core and build hands-on. But this reluctance towards libraries and frameworks steadily transformed into a joy of learning, and exploring concepts that I would've never had the chance to (re)invent myself.
+                </p>
+                <p>
+                    I got into music production in 2020. By 2022, at the age of 17, I had already landed my first job as an audiobook editor in a company on the other side of the globe. I won the audition, and Steve sent through a contract. This meant fulfilling my dreams of contributing to the audio industry and discovering my impact &mdash; the books I'd worked on amassed a combined six-figure listen count. <strong style="font-style: italic; font-weight: 500">For the first time in my life, I was leaving my indelible fingerprint on the world &mdash; <span style="font-weight: 800">our</span> world.</strong>
+                </p>
+            </aside>
+            <aside>
+                <h2>Timeline</h2>
+                <p>
+                    <ul>
+                        <li title="Vue.js (pronounce: view)"><span class="timeline-year">2005-03-07:</span> First Vue - Częstochowa, Poland</li>
+                        <li><span class="timeline-year">2006-2009:</span> Growing up in Sheffield and London</li>
+                        <li><span class="timeline-year">2015:</span> Love at first site &#10084; - first HTML class</li>
+                        <li><span class="timeline-year">2022-05-09:</span> First <a href="https://open.spotify.com/track/1gLdG7O1oyO4efDI66wJ8G?si=ec1e3e16c6614d7b">Spotify release</a> with a friend vocalist</li>
+                        <li><span class="timeline-year">2022-Now:</span> Editor at <a href="https://steveparkeraudiobooks.com/">Steve Parker Audiobooks</a></li>
+                        <li><span class="timeline-year">2023-2026:</span> <a href="https://mfi.ug.edu.pl/rekrutacja/studia-i-stopnia/informatyka/tryb-stacjonarny/profil-praktyczny">CS course at University of Gdańsk</a></li>
+                    </ul>
+                </p>
+            </aside>
+        </section>
+        <section class="background-cover grain" id="projects-container">
+            <div style="text-align: center; font-size: 30pt; padding-block: 100px; color: red; word-break: break-word">
                 UNDER CONSTRUCTION - Portfolio
             </div>
-        </div>
+        </section>
         <footer>
             <div id="footer-grid">
                 <div>
                     <h3>My links:</h3>
                     <ul>
-                        <li><a href="https://www.facebook.com/W0JTEK987">Facebook</a></li>
-                        <li><a href="https://www.instagram.com/w0jtek987/">Instagram</a></li>
-                        <li><a href="https://github.com/Wojtek-987">Github</a></li>
+                        <li><a href="https://editor.p5js.org/Wojtek987/sketches" target="_blank">My P5.js projects</a></li>
+                        <li><a href="https://www.facebook.com/W0JTEK987" target="_blank">Facebook</a></li>
+                        <li><a href="https://www.instagram.com/w0jtek987/" target="_blank">Instagram</a></li>
+                        <li><a href="https://github.com/Wojtek-987" target="_blank">Github</a></li>
                     </ul>
                 </div>
 
@@ -114,7 +135,8 @@
                     <h3>Contact:</h3>
                     <ul>
                         <li><a href="contact.html">Contact form</a></li>
-                        <li title="Copy to clipboard" id="copy-to-clipboard">maciej.woj05@gmail.com</li>
+                        <li title="Copy to clipboard" class="copy-to-clipboard">maciej.woj05@gmail.com</li>
+                        <li title="Copy to clipboard" class="copy-to-clipboard">editor@<wbr>steveparkeraudiobooks<wbr>.com</li>
                     </ul>
                 </div>
             </div>
@@ -124,10 +146,11 @@
 </html>
 
 <!--
+
     TODO:
 
-    - add the about section
     - add the projects section
+    - make the menu scroll-responsive
     - make the contact form send emails
 
 -->

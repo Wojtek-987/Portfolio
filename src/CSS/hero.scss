@@ -50,6 +50,13 @@
 
 
 // === Background Cover ===
+.grain {
+  background-color: $bg-color;
+  background-image: url('../assets/IMG/img-noise-361x370.png');
+  background-repeat: repeat;
+  position: relative;
+}
+
 .background-cover {
   box-sizing: border-box;
   min-height: 100vh;
@@ -57,11 +64,7 @@
   padding-inline: $global-inline-padding;
   width: 100%;
 
-  &.hero {
-    background-color: $bg-color;
-    background-image: url('../assets/IMG/img-noise-361x370.png');
-    background-repeat: repeat;
-    position: relative;
+  &.grain {
 
     #watermark {
       background-image: url('../assets/IMG/watermark.svg');
@@ -508,8 +511,8 @@ nav {
   }
 
   &.active {
-    visibility: visible;
     transform: translateX(0);
+    visibility: visible;
   }
 
   &.invisible {

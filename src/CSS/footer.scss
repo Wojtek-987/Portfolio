@@ -58,8 +58,9 @@ footer {
         }
       }
 
-      &#copy-to-clipboard {
+      &.copy-to-clipboard {
         cursor: pointer;
+        width: fit-content;
 
         &:hover {
           text-decoration: underline;

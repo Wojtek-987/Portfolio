@@ -87,10 +87,10 @@ form {
     transition: background-color .05s;
 
     &:hover {
-      background-color: $text-color;
+      background-color: scale-color($text-color, $lightness: 20%);
     }
 
-    &:focus {
+    &:focus, &:active {
       background-color: $primary-color;
       outline: none;
     }

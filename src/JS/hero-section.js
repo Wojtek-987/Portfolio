@@ -140,18 +140,3 @@ document.addEventListener('keydown', function(event) {
             closeMediaPopup();
     }
 });
-
-
-// === Get current year for footer copyright ===
-const year = new Date().getFullYear();
-const yearSpan = document.querySelector('#current-year');
-yearSpan.innerHTML = year.toString();
-
-const copyEmail = document.querySelector('#copy-to-clipboard');
-copyEmail.addEventListener('mouseup', () => {
-    navigator.clipboard.writeText(copyEmail.textContent).then(() => {
-        console.info('Email copied to clipboard');
-    }).catch(err => {
-        console.error('Failed to copy text: ', err);
-    });
-});
