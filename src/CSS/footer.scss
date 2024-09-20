@@ -37,7 +37,7 @@ footer {
       position: relative;
 
       &::before {
-        background-image: url('../IMG/ul-bullets.svg');
+        background-image: url('../assets/IMG/ul-bullets.svg');
         background-repeat: no-repeat;
         background-size: contain;
         content: '';
@@ -69,8 +69,6 @@ footer {
   }
 
   .greyed-text-contrast {
-    display: block;
     font-size: .9em;
-    text-align: center;
   }
 }

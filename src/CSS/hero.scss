@@ -45,7 +45,7 @@
 
 
 .greyed-text-contrast {
-  color: darken($inactive-grey, 40%);
+  color: $inactive-grey;
 }
 
 
@@ -59,12 +59,12 @@
 
   &.hero {
     background-color: $bg-color;
-    background-image: url('../IMG/img-noise-361x370.png');
+    background-image: url('../assets/IMG/img-noise-361x370.png');
     background-repeat: repeat;
     position: relative;
 
     #watermark {
-      background-image: url('../IMG/watermark.svg');
+      background-image: url('../assets/IMG/watermark.svg');
       background-position: center;
       background-size: cover;
       inset: 0;
