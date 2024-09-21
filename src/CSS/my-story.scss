@@ -8,15 +8,19 @@
   flex-wrap: wrap;
   font-family: 'Reem-Kufi', ui-sans-serif;
   font-size: clamp(1rem, 2vw + 1rem, 1.5rem);
-  gap: 2em;
+  gap: 3.5em;
   justify-content: space-around;
   padding-block: 5em;
   padding-inline: $global-inline-padding;
   width: 100%;
 
   & a {
-    color: $primary-color;
-    font-weight: 500;
+    color: inherit;
+    font-weight: 400;
+
+    &:hover {
+      color: $primary-color;
+    }
   }
 
   & h2 {
@@ -49,10 +53,11 @@
     list-style-type: none;
     margin: 0;
     padding-left: 1em;
+    position: relative;
 
     li {
       $padding-bottom: 1.3em;
-      font-size: clamp(1rem, 2.5vw, 1.5rem);
+      font-size: clamp(0.8rem, 1.9vw, 1.1rem);
       padding-bottom: $padding-bottom;
       position: relative;
 
@@ -69,9 +74,36 @@
         width: 10px;
       }
 
+      &.current-label::after {
+        border-bottom: 2px solid transparent;
+        border-left: 2px solid transparent;
+        border-right: 5px solid $primary-color;
+        border-top: 5px solid $primary-color;
+        box-shadow: 1px -1px 0 0 $bg-color;
+        box-sizing: border-box;
+        content: '';
+        filter: drop-shadow(-2px 2px 5px black);
+        height: 10px;
+        left: -2.5em;
+        position: absolute;
+        rotate: 45deg;
+        top: calc(50% - $padding-bottom / 2);
+        transform: translateY(-50%);
+        width: 10px;
+      }
+
+      &.future {
+        color: $inactive-grey;
+
+        &::before {
+          background-image: url('../assets/IMG/ul-bullets-grey.svg');
+        }
+      }
+
       & span.timeline-year {
+        color: $inactive-grey;
+        font-size: 1.1em;
         letter-spacing: .15em;
-        text-shadow: -2px 3px 10px $primary-color, -2px 3px 10px $primary-color;
       }
 
       a {

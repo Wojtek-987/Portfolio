@@ -18,16 +18,30 @@
         <script type="module" src="JS/imports.js"></script>
         <script type="module" src="JS/hero-section.js"></script>
         <script type="module" src="JS/footer.js"></script>
+        <script type="module" src="JS/language-change.js"></script>
     </head>
+
     <body>
         <header style="all: unset;">
             <nav>
                 <ul>
-                    <li class="logo"><a href="https://github.com/Wojtek-987" target="_blank"><img src="assets/IMG/logo.svg" alt="logo" title="GitHub"></a></li>
-                    <li class="active menu-item"><a href="#start">Start Here</a></li>
-                    <li class="menu-item"><a href="#my-story-container">My Story</a></li>
-                    <li class="menu-item"><a href="#projects-container">Portfolio</a></li>
-                    <li class="challenge-me-button"><button id="challenge-me">Challenge me.</button></li>
+                    <li class="logo">
+                        <a href="https://github.com/Wojtek-987" target="_blank">
+                            <img src="assets/IMG/logo.svg" alt="logo" title="GitHub">
+                        </a>
+                    </li>
+                    <li class="active menu-item">
+                        <a href="#start" data-english="Start Here" data-polish="Start"></a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#my-story-container" data-english="My Story" data-polish="O mnie"></a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#projects-container">Portfolio</a>
+                    </li>
+                    <li class="challenge-me-button">
+                        <button id="challenge-me" data-english="Challenge me." data-polish="Rzuć mi wyzwanie."></button>
+                    </li>
                     <li id="hamburger-menu">
                         <button aria-label="Open menu" style="all: unset">
                             <svg width="3.5rem" height="3.5rem" viewBox="0 0 3.5rem 3.5rem">
@@ -47,15 +61,25 @@
                 </ul>
             </nav>
         </header>
+
         <main class="background-cover grain" id="start">
             <div id="watermark"></div>
             <section id="hero">
                 <div id="introduction">
-                    <h1>Welcome</h1>
-                    <h2>My name is <span class="no-break">Maciej <wbr>Wojciechowski</span></h2>
-                    <p><span class="no-break">I <span class="span-bolder">build</span> sleek websites,</span> <span class="no-break"><span class="span-bolder">design</span> effective interfaces,</span> <span class="no-break">and <span class="span-bolder">craft</span> sound.</span></p>
-                    <a href="contact.html" class="challenge-me-a">Challenge me.</a>
+                    <h1 data-english="Welcome" data-polish="Witaj"></h1>
+                    <h2>
+                        <span data-english="My name is" data-polish="Nazywam się"></span>
+                        <span class="no-break">Maciej <wbr>Wojciechowski</span>
+                    </h2>
+                    <p data-english='<span class="no-break">I <span class="span-bolder">build</span> sleek websites,</span> <span class="no-break"><span class="span-bolder">design</span> effective interfaces,</span> <span class="no-break">and <span class="span-bolder">craft</span> sound.</span>'
+                       data-polish='<span class="no-break"><span class="span-bolder">Tworzę</span> strony www,</span> <span class="no-break"><span class="span-bolder">projektuję</span> interfejsy</span> <span class="no-break">i <span class="span-bolder">zajmuję się</span> dźwiękiem.</span>'>
+<!--                        <span class="no-break">I <span class="span-bolder">build</span> sleek websites,</span>-->
+<!--                        <span class="no-break"><span class="span-bolder">design</span> effective interfaces,</span>-->
+<!--                        <span class="no-break">and <span class="span-bolder">craft</span> sound.</span>-->
+                    </p>
+                    <a href="contact.html" class="challenge-me-a" data-english="Challenge me." data-polish="Rzuć mi wyzwanie."></a>
                 </div>
+
                 <aside id="hero-grid">
                     <div id="placeholder-medium" class="hero-gallery-tile">
                         <img class="hero-gallery-image" src="https://picsum.photos/500/250">
@@ -72,6 +96,7 @@
                 </aside>
             </section>
         </main>
+
         <div id="media-popup-viewer" class="invisible">
             <svg id="media-popup-close" width="3.5rem" height="3.5rem" viewBox="0 0 3.5rem 3.5rem">
                 <line class="line5" x1="1rem" y1="2.5rem" x2="2.5rem" y2="1rem"></line>
@@ -82,66 +107,107 @@
             </svg>
             <div id="media-displayer">
                 <img src="https://picsum.photos/500/300" />
+                <button class="left">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+                        <polygon points="70,20 30,50 70,80" fill="white"/>
+                    </svg>
+                </button>
+                <button class="right">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+                        <polygon points="30,20 70,50 30,80" fill="white"/>
+                    </svg>
+                </button>
             </div>
             <div id="gallery-item-bar">
-                <img class="gallery-item-bar-image active" src="https://picsum.photos/500/250" />
-                <img class="gallery-item-bar-image" src="https://picsum.photos/500/500" />
-                <img class="gallery-item-bar-image" src="https://picsum.photos/600/200" />
+                <img id="img-0" class="gallery-item-bar-image active" src="https://picsum.photos/500/250" />
+                <img id="img-1" class="gallery-item-bar-image" src="https://picsum.photos/500/500" />
+                <img id="img-2" class="gallery-item-bar-image" src="https://picsum.photos/600/200" />
             </div>
         </div>
+
         <div id="dim-website" class="invisible"></div>
+
         <section class="grain" id="my-story-container">
             <aside>
-                <h2>Who I am</h2>
-                <p>
-                    I started programming as a young teen, starting from <a href="https://scratch.mit.edu/">Scratch</a> &mdash; and that sentiment persisted throughout my journey. I've always preferred to understand everything to the core and build hands-on. But this reluctance towards libraries and frameworks steadily transformed into a joy of learning, and exploring concepts that I would've never had the chance to (re)invent myself.
+                <h2 data-english="Who I am" data-polish="O mnie"></h2>
+                <p data-english='I started programming as a young teen, starting from <a href="https://scratch.mit.edu/">Scratch</a> &mdash; and that sentiment persisted throughout my journey. I&apos;ve always preferred to understand everything to the core and build hands-on. But this reluctance towards libraries and frameworks steadily transformed into a joy of learning, and exploring concepts that I would&apos;ve never had the chance to (re)invent myself.'
+                   data-polish="Programowanie zacząłem jako dzieciak - na platformie z uroczym pomarańczowym kotem: <a href='https://scratch.mit.edu/'>Scratch</a>. Zawsze musiałem dotrzeć do dna każdego nowo poznanego konceptu. Tworzyłem sam, nie korzystałem z bibliotek, czy frameworków. Ale ten sentyment na przestrzeni lat przerodził się w pasję poznawania nowych metod i eksplorowania rozwiązań, na które sam nigdy bym nie wpadł.">
+<!--                    I started programming as a young teen, starting from <a href="https://scratch.mit.edu/">Scratch</a> &mdash; and that sentiment persisted throughout my journey. I've always preferred to understand everything to the core and build hands-on. But this reluctance towards libraries and frameworks steadily transformed into a joy of learning, and exploring concepts that I would've never had the chance to (re)invent myself.-->
                 </p>
-                <p>
-                    I got into music production in 2020. By 2022, at the age of 17, I had already landed my first job as an audiobook editor in a company on the other side of the globe. I won the audition, and Steve sent through a contract. This meant fulfilling my dreams of contributing to the audio industry and discovering my impact &mdash; the books I'd worked on amassed a combined six-figure listen count. <strong style="font-style: italic; font-weight: 500">For the first time in my life, I was leaving my indelible fingerprint on the world &mdash; <span style="font-weight: 800">our</span> world.</strong>
+                <p data-english='I got into music production in 2020. By 2022, at the age of 17, I had already landed my first job as an audiobook editor in a company on the other side of the globe. I won the audition, and Steve sent through a contract. This meant fulfilling my dreams of contributing to the audio industry and discovering my impact &mdash; the books I&apos;d worked on amassed a combined six-figure listen count. <strong style="font-style: italic; font-weight: 500">For the first time in my life, I was leaving my indelible fingerprint on the world &mdash; <span style="font-weight: 800">our</span> world.</strong>'
+                   data-polish="Program do tworzenia muzyki kupiłem w 2020-tym roku. Dwa lata później, mając zaledwie 17 lat, podpisałem swój pierwszy kontrakt &mdash; z firmą z Australii. Pokonałem konkurencję w kastingu i otrzymałem pozycję edytora audiobooków. To było spełnienie marzeń: wejście do branży audio. <strong style='font-style: italic; font-weight: 500'>Gdy wyliczyłem 6-cio cyfrową sumę odsłuchań, po raz pierwszy czułem, że mam realny wpływ na otaczający mnie świat &mdash; <span style='font-weight: 800'>nasz</span> świat.</strong>">
+<!--                    I got into music production in 2020. By 2022, at the age of 17, I had already landed my first job as an audiobook editor in a company on the other side of the globe. I won the audition, and Steve sent through a contract. This meant fulfilling my dreams of contributing to the audio industry and discovering my impact &mdash; the books I'd worked on amassed a combined six-figure listen count. <strong style="font-style: italic; font-weight: 500">For the first time in my life, I was leaving my indelible fingerprint on the world &mdash; <span style="font-weight: 800">our</span> world.</strong>-->
                 </p>
             </aside>
+
             <aside>
-                <h2>Timeline</h2>
-                <p>
-                    <ul>
-                        <li title="Vue.js (pronounce: view)"><span class="timeline-year">2005-03-07:</span> First Vue - Częstochowa, Poland</li>
-                        <li><span class="timeline-year">2006-2009:</span> Growing up in Sheffield and London</li>
-                        <li><span class="timeline-year">2015:</span> Love at first site &#10084; - first HTML class</li>
-                        <li><span class="timeline-year">2022-05-09:</span> First <a href="https://open.spotify.com/track/1gLdG7O1oyO4efDI66wJ8G?si=ec1e3e16c6614d7b">Spotify release</a> with a friend vocalist</li>
-                        <li><span class="timeline-year">2022-Now:</span> Editor at <a href="https://steveparkeraudiobooks.com/">Steve Parker Audiobooks</a></li>
-                        <li><span class="timeline-year">2023-2026:</span> <a href="https://mfi.ug.edu.pl/rekrutacja/studia-i-stopnia/informatyka/tryb-stacjonarny/profil-praktyczny">CS course at University of Gdańsk</a></li>
-                    </ul>
-                </p>
+                <h2 data-english="Timeline" data-polish="Oś czasu"></h2>
+                <ul>
+                    <li><span class="timeline-year">2005-03-07:</span> <span data-english="Birthday! - Częstochowa, Poland" data-polish="Urodziny - w Częstochowie"></span></li>
+                    <li><span class="timeline-year">2006-2009:</span> <span data-english="Growing up in Sheffield and London" data-polish="Te lata spędziłem w Sheffield i Londynie"></span></li>
+                    <li><span class="timeline-year">2015:</span> <span data-english="Love at first site - first HTML class" data-polish="Moje pierwsze zajęcia z języka HTML"></span></li>
+                    <li><span class="timeline-year">2022-05-09:</span>
+                        <span data-english="First" data-polish="Wypuściliśmy z koleżanką pierwszą"></span>
+                        <a href="https://open.spotify.com/track/1gLdG7O1oyO4efDI66wJ8G?si=ec1e3e16c6614d7b" data-english="Spotify release" data-polish="piosenkę na Spotify"></a>
+                        <span data-english="with a friend vocalist" data-polish=""></span>
+                    </li>
+                    <li><span class="timeline-year">2022-<span data-english="Now:" data-polish="Dziś:"></span></span> <span data-english="Editor at" data-polish="Edytor w"></span> <a href="https://steveparkeraudiobooks.com/"></a></li>
+                    <li class="current-label"><span class="timeline-year">2023-2026:</span> <a href="https://mfi.ug.edu.pl/rekrutacja/studia-i-stopnia/informatyka/tryb-stacjonarny/profil-praktyczny" data-english="CS course at University of Gdańsk" data-polish="Informatyka (profil praktyczny) na Uniwersytecie Gdańskim"></a></li>
+                    <li class="future"><span class="timeline-year">2038:</span> <span data-english='Finally figuring out what "PHP" stands for' data-polish='Dowiem się w końcu od czego jest skrót "PHP"!'></span></li>
+                </ul>
             </aside>
         </section>
+
         <section class="background-cover grain" id="projects-container">
             <div style="text-align: center; font-size: 30pt; padding-block: 100px; color: red; word-break: break-word">
                 UNDER CONSTRUCTION - Portfolio
             </div>
         </section>
+
         <footer>
             <div id="footer-grid">
                 <div>
-                    <h3>My links:</h3>
+                    <h3 data-english="My links:" data-polish="Moje linki:"></h3>
                     <ul>
-                        <li><a href="https://editor.p5js.org/Wojtek987/sketches" target="_blank">My P5.js projects</a></li>
+                        <li><a href="https://editor.p5js.org/Wojtek987/sketches" target="_blank" data-english="My P5.js projects" data-polish="Moje projekty w P5.js"></a></li>
+                        <li><a href="https://github.com/Wojtek-987" target="_blank">Github</a></li>
                         <li><a href="https://www.facebook.com/W0JTEK987" target="_blank">Facebook</a></li>
                         <li><a href="https://www.instagram.com/w0jtek987/" target="_blank">Instagram</a></li>
-                        <li><a href="https://github.com/Wojtek-987" target="_blank">Github</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h3>Contact:</h3>
+                    <h3 data-english="Contact:" data-polish="Kontakt:"></h3>
                     <ul>
-                        <li><a href="contact.html">Contact form</a></li>
+                        <li><a href="contact.html" data-english="Contact form" data-polish="Formularz kontaktowy"></a></li>
                         <li title="Copy to clipboard" class="copy-to-clipboard">maciej.woj05@gmail.com</li>
                         <li title="Copy to clipboard" class="copy-to-clipboard">editor@<wbr>steveparkeraudiobooks<wbr>.com</li>
                     </ul>
                 </div>
             </div>
-            <span class="greyed-text-contrast">All Rights Reserved - Maciej Wojciechowski <span id="current-year"></span> &copy;</span>
+            <span class="greyed-text-contrast">
+                <span data-english="All Rights Reserved" data-polish="Wszelkie Prawa Zastrzeżone"></span> - Maciej Wojciechowski <span id="current-year"></span> &copy;
+            </span>
         </footer>
+
+        <div id="language-change">
+            <button id="english" class="active">
+                <svg title="English" id="flag-of-england" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="600" height="300">
+                    <rect class="england-white" width="60" height="30" fill="transparent"/>
+                    <g class="england-red" fill="#CCC">
+                        <rect x="26" width="8" height="30"/>
+                        <rect y="11" width="60" height="8"/>
+                    </g>
+                </svg>
+            </button>
+
+            <button id="polish">
+                <svg title="Polski" id="polish-flag" width="400" height="200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200">
+                    <rect class="poland-white" width="400" height="100" fill="transparent"/>
+                    <rect class="poland-red" width="400" height="100" y="100" fill="#CCC"/>
+                </svg>
+            </button>
+        </div>
     </body>
 </html>
 
@@ -150,7 +216,6 @@
     TODO:
 
     - add the projects section
-    - make the menu scroll-responsive
     - make the contact form send emails
 
 -->

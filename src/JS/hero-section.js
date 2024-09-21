@@ -76,6 +76,8 @@ function handleGalleryMouseMove(e) {
     this.children[0].style.transformOrigin = `${e.clientX - rect.left}px ${e.clientY - rect.top}px`;
 }
 
+// === MEDIA POPUP ===
+
 let galleryVisibilityTimeout;
 
 function handleGalleryTileClick() {
@@ -93,7 +95,7 @@ function handleGalleryTileClick() {
     toggleGalleryItemBar(galleryItemCandidate);
 }
 
-// === MEDIA POPUP ===
+
 const mediaCloseButton = document.querySelector("#media-popup-close");
 const mediaPopupViewer = document.querySelector("#media-popup-viewer");
 const dimWebsite = document.querySelector("#dim-website");
@@ -140,3 +142,99 @@ document.addEventListener('keydown', function(event) {
             closeMediaPopup();
     }
 });
+
+// Make side buttons change image
+
+const btnL = document.querySelector('button.left');
+const btnR = document.querySelector('button.right');
+
+btnL.addEventListener('click', () => {
+    rollGallery(-1);
+});
+
+btnR.addEventListener('click', () => {
+    rollGallery(1);
+});
+function rollGallery(operation) {
+    let activeImageIdNum = Number(document.querySelector(".gallery-item-bar-image.active").id.slice(-1));
+
+    let newImgId = (activeImageIdNum + operation + 3) % 3;
+    let image = document.querySelector(`img#img-${newImgId}`);
+    changeImageInPopup(image);
+    toggleGalleryItemBar(image);
+}
+
+// Arrow key gallery traversal
+document.addEventListener('keydown', function(event) {
+    if(mediaPopupViewer.classList.contains("invisible")) return;
+    if (event.key === 'ArrowLeft') {
+        // Call rollGallery with -1 when the left arrow is pressed
+        rollGallery(-1);
+    } else if (event.key === 'ArrowRight') {
+        // Call rollGallery with +1 when the right arrow is pressed
+        rollGallery(1);
+    }
+});
+
+
+
+
+
+
+// === TOGGLE MENU ON SCROLL ===
+
+// Map sections to their corresponding menu items
+const sections = [
+    {
+        id: "hero",
+        element: document.getElementById("hero"),
+        menuItem: document.querySelector('a[href="#start"]').parentElement,
+    },
+    {
+        id: "my-story-container",
+        element: document.getElementById("my-story-container"),
+        menuItem: document.querySelector('a[href="#my-story-container"]').parentElement,
+    },
+    {
+        id: "projects-container",
+        element: document.getElementById("projects-container"),
+        menuItem: document.querySelector('a[href="#projects-container"]').parentElement,
+    },
+];
+
+let currentActiveSection = null;
+
+// Function to handle scroll events
+function toggleMenuActiveClassOnScroll() {
+    const scrollPosition = window.scrollY + window.innerHeight / 2;
+    let foundSection = false;
+
+    // Loop through sections to find which one is in view
+    for (let i = 0; i < sections.length; i++) {
+        const section = sections[i];
+        const rect = section.element.getBoundingClientRect();
+        const sectionTop = rect.top + window.scrollY;
+        const sectionBottom = sectionTop + rect.height;
+
+        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+            foundSection = true;
+            if (currentActiveSection !== section.id) {
+                toggleMenu(section.menuItem);
+                currentActiveSection = section.id;
+            }
+            break;
+        }
+    }
+
+    // If no section is found, remove active class
+    if (!foundSection && currentActiveSection !== null) {
+        const activeMenuItem = document.querySelector("li.active");
+        if (activeMenuItem) {
+            activeMenuItem.classList.remove("active");
+        }
+        currentActiveSection = null;
+    }
+}
+
+window.addEventListener("scroll", toggleMenuActiveClassOnScroll);
+toggleMenuActiveClassOnScroll();

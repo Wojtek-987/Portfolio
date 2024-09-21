@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Contact | Maciej Wojciechowski</title>
+        <title data-english="Contact | Maciej Wojciechowski" data-polish="Kontakt | Maciej Wojciechowski">Contact | Maciej Wojciechowski</title>
         <meta name="theme-color" content="#1100FA">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,19 +17,19 @@
     <body>
         <div id="watermark"></div>
         <form>
-            <h1>Challenge me.</h1>
+            <h1 data-english="Challenge me." data-polish="Rzuć mi wyzwanie."></h1>
             <span>
-                <label for="subject">Subject:</label>
+                <label for="subject" data-english="Subject:" data-polish="Tytuł"></label>
                 <input type="text" id="subject" name="subject" autofocus>
             </span>
 
             <span>
-                <label for="sender-email">Your email:</label>
+                <label for="sender-email" data-english="Your email:" data-polish="Email kontaktowy:"></label>
                 <input type="text" id="sender-email" name="sender-email">
             </span>
 
             <span>
-                <label for="message">Message:</label>
+                <label for="message" data-english="Message:" data-polish="Wiadomość:"></label>
                 <textarea id="message" name="message"></textarea>
             </span>
 
@@ -40,5 +40,12 @@
                 </svg>
             </button>
         </form>
+        <script>
+            // translate the page
+            const lang = localStorage.getItem('language');
+            document.querySelectorAll('[data-' + lang + ']').forEach(function(element) {
+                element.innerHTML = element.getAttribute('data-' + lang);
+            });
+        </script>
     </body>
 </html>

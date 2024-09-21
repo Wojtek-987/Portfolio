@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Contact | Maciej Wojciechowski</title>
+        <title data-english="Success!" data-polish="Poszło!">Success!</title>
         <meta name="theme-color" content="#1100FA">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,15 +15,16 @@
         <meta name="googlebot" content="noimageindex">
 
         <script type="module" src="JS/contact.js"></script>
+        <script type="module" src="JS/language-change.js"></script>
     </head>
     <body>
     <div id="watermark"></div>
     <form>
-        <h1>Success!</h1>
+        <h1 data-english="Success!" data-polish="Poszło!"></h1>
         <p>
-            <span class="no-flex">Your challenge has been sent! You will be redirected to the homepage in: <span class="no-flex" id="timer">-</span>s</span>
+            <span class="no-flex"><span data-english="Your challenge has been sent! You will be redirected to the homepage in:" data-polish="Wyzwanie zostało rzucone! Przekierowanie do strony głownej nastąpi za:"></span> <span class="no-flex" id="timer">-</span>s</span>
             <a href="index.html">
-                Take me back
+                <span data-english="Take me back" data-polish="Wróć do strony głownej"></span>
                 <svg width="1rem" height="1rem" viewBox="0 0 1rem 1rem">
                     <line class="svg-send-line dark" x1=".2rem" y1="0" x2=".8rem" y2=".55rem" />
                     <line class="svg-send-line dark" x1=".2rem" y1="1rem" x2=".5rem" y2=".68rem" />
@@ -39,12 +40,18 @@
             setInterval(() => {
                 counter--;
 
-                if(counter < 1)
+                if (counter < 1)
                     window.location = "index.html";
 
                 timerSpan.innerHTML = counter.toString();
             }, 1000);
+
+            // Translate the page
+            const lang = localStorage.getItem('language');
+            document.querySelectorAll('[data-' + lang + ']').forEach(function(element) {
+                element.innerHTML = element.getAttribute('data-' + lang);
+            });
         </script>
     </form>
-</body>
+    </body>
 </html>
