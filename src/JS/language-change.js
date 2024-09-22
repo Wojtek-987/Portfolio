@@ -25,3 +25,12 @@ function checkLanguage() {
 }
 
 checkLanguage();
+
+
+
+
+const picker = document.querySelector('#language-change');
+picker.style.opacity = "1";
+setTimeout(() => {
+    picker.removeAttribute('style')
+}, 4000)

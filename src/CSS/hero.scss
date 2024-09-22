@@ -507,7 +507,6 @@ nav {
   overflow: hidden;
   position: fixed;
   transform: translateX(-150%);
-  transition: transform .3s;
   z-index: 100;
 
   @include gallery-hide {
@@ -531,13 +530,13 @@ nav {
     z-index: 5;
 
     &.animate {
-      & > .line5 {
-        animation: close-popup-animation-line5 $_animation-duration forwards;
-      }
-
-      & > .line6-group {
-        animation: close-popup-animation-line6 $_animation-duration forwards;
-      }
+      //& > .line5 {
+      //  animation: close-popup-animation-line5 $_animation-duration forwards;
+      //}
+      //
+      //& > .line6-group {
+      //  animation: close-popup-animation-line6 $_animation-duration forwards;
+      //}
     }
   }
 
@@ -551,6 +550,7 @@ nav {
     background-color: $text-color;
     opacity: .3;
     transition: .2s;
+    padding-bottom: 5em;
 
     &.left {
       left: 0;
@@ -652,12 +652,18 @@ nav {
   right: 0;
   top: 10em;
   background: $bg-color;
-  z-index: 1000;
+  z-index: 4;
   padding: .5em;
   display: flex;
   flex-direction: column;
   gap: .5em;
   border: 1px solid $text-color;
+  opacity: .1;
+  transition: .2s;
+
+  &:hover {
+    opacity: 1;
+  }
   
   & > button {
     all: unset;
@@ -668,6 +674,10 @@ nav {
 
     & rect {
       transition: fill .2s;
+    }
+
+    &.active {
+      outline: 1px solid $primary-color;
     }
 
     &.active, &:hover {

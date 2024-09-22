@@ -102,8 +102,8 @@ const dimWebsite = document.querySelector("#dim-website");
 const mediaDisplayer = document.querySelector("#media-displayer");
 
 mediaCloseButton.addEventListener("click", closeMediaPopup);
-mediaCloseButton.addEventListener("mouseenter", handleMenuMouseEnter);
-mediaCloseButton.addEventListener("animationend", handleMenuAnimationEnd);
+// mediaCloseButton.addEventListener("mouseenter", handleMenuMouseEnter);
+// mediaCloseButton.addEventListener("animationend", handleMenuAnimationEnd);
 
 
 function closeMediaPopup() {

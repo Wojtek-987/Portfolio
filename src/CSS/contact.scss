@@ -23,7 +23,7 @@ body {
 form {
   backdrop-filter: blur(10px);
   border: 1px solid $text-color;
-  box-shadow: 0 0 2em lighten($text-color, 90%);
+  box-shadow: 0 0 2em scale-color($text-color, $lightness: 90%);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -108,6 +108,7 @@ form {
       gap: .5em;
       text-decoration: none;
       width: max-content;
+      max-width: 100%;
 
       &:hover {
         text-decoration: underline;

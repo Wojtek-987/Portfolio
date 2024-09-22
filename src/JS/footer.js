@@ -15,3 +15,14 @@ copyEmail.forEach((e) => {
         });
     });
 });
+
+// go to links section on send challenge fail
+const target = window.location.hash;
+if(target === '#footer-highlight') {
+    document.addEventListener('DOMContentLoaded', setTimeout(() => {
+        const footerHighlight = document.querySelector('#footer-highlight');
+        footerHighlight.style.outline = "10px double yellow";
+        footerHighlight.style.outlineOffset = "1.5em";
+        scrollTo({top: document.body.scrollHeight});
+    }, 300));
+}
