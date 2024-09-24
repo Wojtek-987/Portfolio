@@ -133,7 +133,7 @@
             <aside>
                 <h2 data-english="Who I am" data-polish="O mnie"></h2>
                 <p data-english='I started programming as a young teen, starting from <a href="https://scratch.mit.edu/">Scratch</a> &mdash; and that sentiment persisted throughout my journey. I&apos;ve always preferred to understand everything to the core and build hands-on. But this reluctance towards libraries and frameworks steadily transformed into a joy of learning, and exploring concepts that I would&apos;ve never had the chance to (re)invent myself.'
-                   data-polish="Programowanie zacząłem jako dzieciak - na platformie z uroczym pomarańczowym kotem: <a href='https://scratch.mit.edu/'>Scratch</a>. Zawsze musiałem dotrzeć do dna każdego nowo poznanego konceptu. Tworzyłem sam, nie korzystałem z bibliotek, czy frameworków. Ale ten sentyment na przestrzeni lat przerodził się w pasję poznawania nowych metod i eksplorowania rozwiązań, na które sam nigdy bym nie wpadł.">
+                   data-polish="Programowanie zacząłem jako dzieciak &mdash; na platformie z uroczym pomarańczowym kotem: <a href='https://scratch.mit.edu/'>Scratch</a>. Zawsze musiałem dotrzeć do dna każdego nowo poznanego konceptu. Tworzyłem sam, nie korzystałem z bibliotek, czy frameworków. Ale ten sentyment na przestrzeni lat przerodził się w pasję poznawania nowych metod i eksplorowania rozwiązań, na które sam nigdy bym nie wpadł.">
 <!--                    I started programming as a young teen, starting from <a href="https://scratch.mit.edu/">Scratch</a> &mdash; and that sentiment persisted throughout my journey. I've always preferred to understand everything to the core and build hands-on. But this reluctance towards libraries and frameworks steadily transformed into a joy of learning, and exploring concepts that I would've never had the chance to (re)invent myself.-->
                 </p>
                 <p data-english='I got into music production in 2020. By 2022, at the age of 17, I had already landed my first job as an audiobook editor in a company on the other side of the globe. I won the audition, and Steve sent through a contract. This meant fulfilling my dreams of contributing to the audio industry and discovering my impact &mdash; the books I&apos;d worked on amassed a combined six-figure listen count. <strong style="font-style: italic; font-weight: 500">For the first time in my life, I was leaving my indelible fingerprint on the world &mdash; <span style="font-weight: 800">our</span> world.</strong>'
@@ -160,9 +160,20 @@
             </aside>
         </section>
 
-        <section class="background-cover grain" id="projects-container">
-            <div style="text-align: center; font-size: 30pt; padding-block: 100px; color: red; word-break: break-word">
-                UNDER CONSTRUCTION - Portfolio
+        <section class="grain" id="projects-container">
+            <h2 data-english="Projects" data-polish="Projekty"></h2>
+            <div id="projects-tag-bar">
+                <button data-color="#F1F1FF" class="selected" data-english="All" data-polish="Wszystkie"></button>
+                <button data-color="#fca103">Web</button>
+                <button data-color="#03fcfc">React</button>
+                <button data-color="#f0d822">TypeScript</button>
+                <button data-color="#b20046">P5.js</button>
+                <button data-color="#3bd923">Python</button>
+                <button data-color="#EC2125">Java</button>
+                <button data-color="#9c23d9">C++</button>
+            </div>
+            <div id="project-tile-container">
+<!--            Tiles of projects are injected here -->
             </div>
         </section>
 
@@ -171,8 +182,8 @@
                 <div>
                     <h3 data-english="My links:" data-polish="Moje linki:"></h3>
                     <ul>
-                        <li><a href="https://editor.p5js.org/Wojtek987/sketches" target="_blank" data-english="My P5.js projects" data-polish="Moje projekty w P5.js"></a></li>
                         <li><a href="https://github.com/Wojtek-987" target="_blank">Github</a></li>
+                        <li><a href="https://editor.p5js.org/Wojtek987/sketches" target="_blank" data-english="My P5.js projects" data-polish="Moje projekty w P5.js"></a></li>
                         <li><a href="https://www.facebook.com/W0JTEK987" target="_blank">Facebook</a></li>
                         <li><a href="https://www.instagram.com/w0jtek987/" target="_blank">Instagram</a></li>
                     </ul>
@@ -216,8 +227,6 @@
 <!--
 
     TODO:
-
-    - add the projects section
 
     - add the 3 photos
     - make the contact form send emails

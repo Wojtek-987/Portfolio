@@ -1,1 +1,103 @@
 @import "config";
+
+#projects-container {
+  background-color: $primary-color;
+  font-family: "Reem-Kufi", ui-sans-serif;
+  font-size: clamp(1rem, 2vw + 1rem, 1.5rem);
+  padding-block: 5em;
+  padding-inline: $global-inline-padding;
+  color: $bg-color;
+
+  h2 {
+    margin: 0;
+    font-size: clamp(1.5rem, 1.9vw + 1rem, 3.5rem);
+    letter-spacing: .05em;
+    word-spacing: .05em;
+    padding-bottom: 1em;
+  }
+
+  #projects-tag-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .3em;
+
+    & button {
+      cursor: pointer;
+      border-radius: 0;
+      border: none;
+      padding: .5em .9em;
+      font-family: inherit;
+      background-color: $inactive-grey;
+      transition: background-color .1s;
+    }
+  }
+
+  #project-tile-container {
+    margin-top: 1em;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(12em, 100%), 1fr));
+    justify-content: start;
+    gap: 1em;
+
+    & > .tile {
+      background-color: $bg-color;
+      color: $text-color;
+      padding: .5em;
+      position: relative;
+
+      & > h3 {
+        line-height: 1em;
+        margin: 0 0 .25em;
+      }
+
+      & > .tags {
+        display: flex;
+        gap: .3em;
+
+        & > span {
+          font-size: .5em;
+          padding-inline: .4em;
+        }
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 2 / 1;
+        background-color: $inactive-grey;
+        border: none;
+        user-select: none;
+        object-fit: cover;
+        object-position: center;
+        margin: .35em 0 2.8em;
+      }
+
+      .action-bar {
+        display: flex;
+        gap: .5em;
+        margin-top: .5em;
+        border-top: 2px solid $inactive-grey;
+        padding-top: .5em;
+        position: absolute;
+        bottom: .5em;
+        width: calc(100% - 1em);
+
+        & > a {
+          text-decoration: none;
+          color: $text-color;
+          line-height: 0;
+
+          & object {
+            pointer-events: none;
+          }
+
+          & svg {
+            width: 1.5em;
+            height: auto;
+            fill: $text-color;
+          }
+        }
+      }
+    }
+  }
+}
