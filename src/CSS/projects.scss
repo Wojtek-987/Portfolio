@@ -40,10 +40,25 @@
     gap: 1em;
 
     & > .tile {
+      $tile-padding: .8em;
       background-color: $bg-color;
       color: $text-color;
-      padding: .5em;
+      padding: $tile-padding;
       position: relative;
+
+      &.promoted {
+        outline: 5px solid #ff0000;
+
+        &::before {
+          content: 'Promoted';
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          background-color: #ff0000;
+          padding: .4em .9em;
+          font-size: .7em;
+        }
+      }
 
       & > h3 {
         line-height: 1em;
@@ -80,7 +95,7 @@
         padding-top: .5em;
         position: absolute;
         bottom: .5em;
-        width: calc(100% - 1em);
+        width: calc(100% - $tile-padding * 2);
 
         & > a {
           text-decoration: none;
