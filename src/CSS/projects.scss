@@ -47,14 +47,15 @@
       position: relative;
 
       &.promoted {
-        outline: 5px solid #ff0000;
+        outline: 5px solid $text-color;
 
         &::before {
           content: 'Promoted';
           position: absolute;
           bottom: 0;
           right: 0;
-          background-color: #ff0000;
+          background-color: $text-color;
+          color: $bg-color;
           padding: .4em .9em;
           font-size: .7em;
         }
@@ -84,7 +85,7 @@
         user-select: none;
         object-fit: cover;
         object-position: center;
-        margin: .35em 0 2.8em;
+        margin: 1em 0 4.5em;
       }
 
       .action-bar {
@@ -92,10 +93,24 @@
         gap: .5em;
         margin-top: .5em;
         border-top: 2px solid $inactive-grey;
-        padding-top: .5em;
+        padding-top: 1em;
         position: absolute;
         bottom: .5em;
         width: calc(100% - $tile-padding * 2);
+
+        &::before {
+          content: 'Links:';
+          position: absolute;
+          top: -1em;
+          left: -.2em;
+          padding: .65em 1em;
+          transform: skew(-10deg);
+          height: .5em;
+          line-height: .3em;
+          background-color: $text-color;
+          color: $bg-color;
+          font-size: .5em;
+        }
 
         & > a {
           text-decoration: none;

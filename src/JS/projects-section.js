@@ -45,6 +45,15 @@ const projects = [
         promoted: true
     },
     {
+        title: 'Editing Showcase Video for Steve Parker Audiobooks',
+        tags: ['Audio'],
+        img: 'spa.jpg',
+        github: '',
+        youtube: 'https://www.youtube.com/watch?v=EZP3RqhiaT0',
+        web: '',
+        promoted: true
+    },
+    {
         title: 'Interactive Rain',
         tags: ['Web', 'P5.js'],
         img: 'p5-rain.png',
