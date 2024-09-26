@@ -45,6 +45,15 @@ const projects = [
         promoted: true
     },
     {
+        title: 'Minesweeper Desktop App',
+        tags: ['Python'],
+        img: 'minesweeper.png',
+        github: 'https://github.com/Wojtek-987/minesweeper',
+        youtube: '',
+        web: '',
+        promoted: true
+    },
+    {
         title: 'Editing Showcase Video for Steve Parker Audiobooks',
         tags: ['Audio'],
         img: 'spa.jpg',
