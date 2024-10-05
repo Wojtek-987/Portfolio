@@ -1,5 +1,16 @@
 const buttons = document.querySelectorAll('#polish, #english');
 
+if(!localStorage.getItem('language')) {
+    let userLanguage = navigator.language;
+    if(userLanguage.startsWith('pl')) {
+        userLanguage = 'polish';
+    } else {
+        userLanguage = 'english';
+    }
+
+    localStorage.setItem('language', userLanguage);
+}
+
 buttons.forEach(function(button) {
     button.addEventListener('click', function() {
         localStorage.setItem('language', this.id);

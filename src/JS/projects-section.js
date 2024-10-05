@@ -45,10 +45,28 @@ const projects = [
         promoted: true
     },
     {
+        title: 'Sudoku Board Generator',
+        tags: ['Java'],
+        img: 'java-sudoku.png',
+        github: 'https://github.com/Wojtek-987/Sudoku',
+        youtube: '',
+        web: '',
+        promoted: true
+    },
+    {
         title: 'Minesweeper Desktop App',
         tags: ['Python'],
         img: 'minesweeper.png',
         github: 'https://github.com/Wojtek-987/minesweeper',
+        youtube: '',
+        web: '',
+        promoted: true
+    },
+    {
+        title: 'TINY - C++ JIT interpreter for custom programming language',
+        tags: ['C++'],
+        img: 'cpp-tiny.png',
+        github: 'https://github.com/Wojtek-987/TINY',
         youtube: '',
         web: '',
         promoted: true
@@ -60,7 +78,7 @@ const projects = [
         github: '',
         youtube: 'https://www.youtube.com/watch?v=EZP3RqhiaT0',
         web: '',
-        promoted: true
+        promoted: false
     },
     {
         title: 'Interactive Rain',
