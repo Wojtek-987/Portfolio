@@ -1,0 +1,139 @@
+::selection {
+  background-color: rgba(17, 0, 250, 0.1);
+}
+
+@font-face {
+  font-family: "Reem-Kufi";
+  src: url("../FONT/Reem_Kufi/ReemKufi-VariableFont_wght.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Sen";
+  src: url("../FONT/Sen/Sen-VariableFont_wght.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../FONT/Montserrat/Montserrat-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../FONT/Montserrat/Montserrat-Italic-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+}
+html, body {
+  background-color: #F1F1FF;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  scrollbar-color: #1100FA;
+}
+
+#my-story-container {
+  background-color: #070709;
+  box-sizing: border-box;
+  color: #F1F1FF;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: "Reem-Kufi", ui-sans-serif;
+  font-size: clamp(1rem, 2vw + 1rem, 1.5rem);
+  gap: 3.5em;
+  justify-content: space-around;
+  padding-block: 5em;
+  padding-inline: clamp(10px, 12vw, 200px);
+  width: 100%;
+}
+#my-story-container a {
+  color: inherit;
+  font-weight: 400;
+}
+#my-story-container a:hover {
+  color: #1100FA;
+}
+#my-story-container h2 {
+  font-size: clamp(1.5rem, 1.9vw + 1rem, 3.5rem);
+  letter-spacing: 0.05em;
+  word-spacing: 0.05em;
+}
+#my-story-container p {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(0.8rem, 1.9vw, 1.1rem);
+  font-weight: 200;
+  letter-spacing: 0.03rem;
+  line-height: 1.8;
+}
+#my-story-container > * {
+  flex-basis: 0;
+  max-width: 35ch;
+}
+#my-story-container > aside {
+  flex: 1;
+  min-width: 20ch;
+}
+#my-story-container ul {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  list-style-type: none;
+  margin: 0;
+  padding-left: 1em;
+  position: relative;
+}
+#my-story-container ul li {
+  font-size: clamp(0.8rem, 1.9vw, 1.1rem);
+  padding-bottom: 1.3em;
+  position: relative;
+}
+#my-story-container ul li::before {
+  background-image: url("../assets/IMG/ul-bullets.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "";
+  height: 10px;
+  left: -13px;
+  position: absolute;
+  top: calc(50% - 0.65em);
+  transform: translateY(-50%);
+  width: 10px;
+}
+#my-story-container ul li.current-label::after {
+  border-bottom: 2px solid transparent;
+  border-left: 2px solid transparent;
+  border-right: 5px solid #1100FA;
+  border-top: 5px solid #1100FA;
+  box-shadow: 1px -1px 0 0 #F1F1FF;
+  box-sizing: border-box;
+  content: "";
+  filter: drop-shadow(-2px 2px 5px black);
+  height: 10px;
+  left: -45px;
+  position: absolute;
+  rotate: 45deg;
+  top: calc(50% - 0.65em);
+  transform: translateY(-50%);
+  width: 10px;
+}
+#my-story-container ul li.future {
+  color: #CCC;
+}
+#my-story-container ul li.future::before {
+  background-image: url("../assets/IMG/ul-bullets-grey.svg");
+}
+#my-story-container ul li span.timeline-year {
+  color: #CCC;
+  font-size: 1.1em;
+  letter-spacing: 0.15em;
+}
+#my-story-container ul li a {
+  color: #F1F1FF;
+  text-decoration: none;
+}
+#my-story-container ul li a:hover {
+  text-decoration: underline;
+}
+#my-story-container *::selection {
+  background-color: #F1F1FF;
+  color: #070709;
+}
+
+/*# sourceMappingURL=my-story.css.map */

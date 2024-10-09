@@ -1,0 +1,95 @@
+::selection {
+  background-color: rgba(17, 0, 250, 0.1);
+}
+
+@font-face {
+  font-family: "Reem-Kufi";
+  src: url("../FONT/Reem_Kufi/ReemKufi-VariableFont_wght.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Sen";
+  src: url("../FONT/Sen/Sen-VariableFont_wght.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../FONT/Montserrat/Montserrat-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../FONT/Montserrat/Montserrat-Italic-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+}
+html, body {
+  background-color: #F1F1FF;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  scrollbar-color: #1100FA;
+}
+
+footer {
+  background-color: #070709;
+  color: #F1F1FF;
+  font-family: "Reem-Kufi", ui-sans-serif;
+  padding: 5em clamp(10px, 12vw, 200px);
+}
+footer *::selection {
+  background-color: #F1F1FF;
+  color: #070709;
+}
+footer #footer-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  margin-bottom: 8em;
+}
+footer #footer-grid > * {
+  flex: 1;
+  min-width: 20ch;
+}
+footer h3 {
+  font-size: 1.5em;
+}
+footer ul {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 1em;
+}
+footer ul li {
+  padding-block: 0.2em;
+  position: relative;
+}
+footer ul li::before {
+  background-image: url("../assets/IMG/ul-bullets.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "";
+  height: 10px;
+  left: -13px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+}
+footer ul li a {
+  color: #F1F1FF;
+  text-decoration: none;
+}
+footer ul li a:hover {
+  text-decoration: underline;
+}
+footer ul li.copy-to-clipboard {
+  cursor: pointer;
+  width: fit-content;
+}
+footer ul li.copy-to-clipboard:hover {
+  text-decoration: underline;
+}
+footer .greyed-text-contrast {
+  font-size: clamp(0.85em, 0.9em + 0.2vw, 1em);
+}
+
+/*# sourceMappingURL=footer.css.map */

@@ -1,0 +1,148 @@
+::selection {
+  background-color: rgba(17, 0, 250, 0.1);
+}
+
+@font-face {
+  font-family: "Reem-Kufi";
+  src: url("../FONT/Reem_Kufi/ReemKufi-VariableFont_wght.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Sen";
+  src: url("../FONT/Sen/Sen-VariableFont_wght.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../FONT/Montserrat/Montserrat-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../FONT/Montserrat/Montserrat-Italic-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+}
+html, body {
+  background-color: #F1F1FF;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  scrollbar-color: #1100FA;
+}
+
+#projects-container {
+  background-color: #1100FA;
+  font-family: "Reem-Kufi", ui-sans-serif;
+  font-size: clamp(1rem, 2vw + 1rem, 1.5rem);
+  padding-block: 5em;
+  padding-inline: clamp(10px, 12vw, 200px);
+  color: #F1F1FF;
+}
+#projects-container h2 {
+  margin: 0;
+  font-size: clamp(1.5rem, 1.9vw + 1rem, 3.5rem);
+  letter-spacing: 0.05em;
+  word-spacing: 0.05em;
+  padding-bottom: 1em;
+}
+#projects-container #projects-tag-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3em;
+}
+#projects-container #projects-tag-bar button {
+  cursor: pointer;
+  border-radius: 0;
+  border: none;
+  padding: 0.5em 0.9em;
+  font-family: inherit;
+  background-color: #CCC;
+  transition: background-color 0.1s;
+}
+#projects-container #project-tile-container {
+  margin-top: 1em;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(12em, 100%), 1fr));
+  justify-content: start;
+  gap: 1em;
+}
+#projects-container #project-tile-container > .tile {
+  background-color: #F1F1FF;
+  color: #070709;
+  padding: 0.8em;
+  position: relative;
+}
+#projects-container #project-tile-container > .tile.promoted {
+  outline: 5px solid #070709;
+}
+#projects-container #project-tile-container > .tile.promoted::before {
+  content: "Promoted";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #070709;
+  color: #F1F1FF;
+  padding: 0.4em 0.9em;
+  font-size: 0.7em;
+}
+#projects-container #project-tile-container > .tile > h3 {
+  line-height: 1em;
+  margin: 0 0 0.25em;
+}
+#projects-container #project-tile-container > .tile > .tags {
+  display: flex;
+  gap: 0.3em;
+}
+#projects-container #project-tile-container > .tile > .tags > span {
+  font-size: 0.5em;
+  padding-inline: 0.4em;
+}
+#projects-container #project-tile-container > .tile img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2/1;
+  background-color: #CCC;
+  border: none;
+  user-select: none;
+  object-fit: cover;
+  object-position: center;
+  margin: 1em 0 4.5em;
+}
+#projects-container #project-tile-container > .tile .action-bar {
+  display: flex;
+  gap: 0.5em;
+  margin-top: 0.5em;
+  border-top: 2px solid #CCC;
+  padding-top: 1em;
+  position: absolute;
+  bottom: 0.5em;
+  width: calc(100% - 1.6em);
+}
+#projects-container #project-tile-container > .tile .action-bar::before {
+  content: "Links:";
+  position: absolute;
+  top: -1em;
+  left: -0.2em;
+  padding: 0.65em 1em;
+  transform: skew(-10deg);
+  height: 0.5em;
+  line-height: 0.3em;
+  background-color: #070709;
+  color: #F1F1FF;
+  font-size: 0.5em;
+}
+#projects-container #project-tile-container > .tile .action-bar > a {
+  text-decoration: none;
+  color: #070709;
+  line-height: 0;
+}
+#projects-container #project-tile-container > .tile .action-bar > a object {
+  pointer-events: none;
+}
+#projects-container #project-tile-container > .tile .action-bar > a svg {
+  width: 1.5em;
+  height: auto;
+  fill: #070709;
+}
+
+/*# sourceMappingURL=projects.css.map */
