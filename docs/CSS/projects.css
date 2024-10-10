@@ -84,6 +84,7 @@ html, body {
   color: #F1F1FF;
   padding: 0.4em 0.9em;
   font-size: 0.7em;
+  font-weight: bold;
 }
 #projects-container #project-tile-container > .tile > h3 {
   line-height: 1em;

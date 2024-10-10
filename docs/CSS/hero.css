@@ -476,7 +476,7 @@ nav ul .challenge-me-button #challenge-me.animate::before {
   font-size: clamp(2.5rem, 4vw + 1rem, 4.5rem);
   font-weight: normal;
   letter-spacing: -0.02em;
-  margin: 0 -2px clamp(1rem, 2vw + 1rem, 1.5rem) 0;
+  margin: 0 0 clamp(1rem, 2vw + 1rem, 1.5rem) -3px;
 }
 #introduction h2 {
   font-size: clamp(1.5rem, 2vw + 1rem, 3rem);
