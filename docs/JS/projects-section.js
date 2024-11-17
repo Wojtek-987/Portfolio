@@ -63,11 +63,11 @@ const projects = [
         promoted: true
     },
     {
-        title: 'TINY - C++ JIT interpreter for custom programming language [In Progress]',
+        title: 'TINY - C++ JIT interpreter for custom programming language',
         tags: ['C++'],
-        img: 'cpp-tiny.png',
+        img: 'tiny-interpreter.png',
         github: 'https://github.com/Wojtek-987/TINY',
-        youtube: '',
+        youtube: 'https://www.youtube.com/@wojtek987',
         web: '',
         promoted: true
     },

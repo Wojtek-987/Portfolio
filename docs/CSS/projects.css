@@ -82,9 +82,15 @@ html, body {
   right: 0;
   background-color: #070709;
   color: #F1F1FF;
-  padding: 0.4em 0.9em;
+  padding: 0.8em 1.4em;
   font-size: 0.7em;
   font-weight: bold;
+  pointer-events: none;
+}
+@media (max-width: 400px) {
+  #projects-container #project-tile-container > .tile.promoted::before {
+    display: none !important;
+  }
 }
 #projects-container #project-tile-container > .tile > h3 {
   line-height: 1em;

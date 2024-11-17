@@ -1,5 +1,11 @@
 @import "config";
 
+@mixin responsive-hide($breakpoint) {
+  @media (max-width: $breakpoint) {
+    display: none !important;
+  }
+}
+
 #projects-container {
   background-color: $primary-color;
   font-family: "Reem-Kufi", ui-sans-serif;
@@ -56,9 +62,12 @@
           right: 0;
           background-color: $text-color;
           color: $bg-color;
-          padding: .4em .9em;
+          padding: .8em 1.4em;
           font-size: .7em;
           font-weight: bold;
+          pointer-events: none;
+
+          @include responsive-hide(400px);
         }
       }
 
