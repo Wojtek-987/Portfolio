@@ -36,30 +36,21 @@ buttons.forEach(button => {
 
 const projects = [
     {
+        title: 'TaskStream',
+        tags: ['Web', 'React'],
+        img: 'task-stream.png',
+        github: '',
+        youtube: '',
+        web: 'https://task-stream.site',
+        promoted: true
+    },
+    {
         title: 'Spark.js - a 2D Particle FX Library',
         tags: ['Web', 'TypeScript'],
         img: 'ts-particle-system.png',
         github: 'https://github.com/Wojtek-987/spark.js',
         youtube: '',
         web: 'https://editor.p5js.org/Wojtek987/sketches/UqBWRs7yg',
-        promoted: true
-    },
-    {
-        title: 'Sudoku Board Generator',
-        tags: ['Java'],
-        img: 'java-sudoku.png',
-        github: 'https://github.com/Wojtek-987/Sudoku',
-        youtube: '',
-        web: '',
-        promoted: true
-    },
-    {
-        title: 'Minesweeper Desktop App',
-        tags: ['Python'],
-        img: 'minesweeper.png',
-        github: 'https://github.com/Wojtek-987/minesweeper',
-        youtube: '',
-        web: '',
         promoted: true
     },
     {
@@ -70,6 +61,24 @@ const projects = [
         youtube: 'https://www.youtube.com/@wojtek987',
         web: '',
         promoted: true
+    },
+    {
+        title: 'Sudoku Board Generator',
+        tags: ['Java'],
+        img: 'java-sudoku.png',
+        github: 'https://github.com/Wojtek-987/Sudoku',
+        youtube: '',
+        web: '',
+        promoted: false
+    },
+    {
+        title: 'Minesweeper Desktop App',
+        tags: ['Python'],
+        img: 'minesweeper.png',
+        github: 'https://github.com/Wojtek-987/minesweeper',
+        youtube: '',
+        web: '',
+        promoted: false
     },
     {
         title: 'Editing Showcase Video for Steve Parker Audiobooks',
@@ -154,6 +163,7 @@ function drawProjectsList(projectsList) {
         const img = document.createElement('img');
         img.src = "assets/IMG/PROJECT_THUMBNAILS/" + project.img;
         img.setAttribute('draggable', 'false');
+        img.setAttribute('loading', 'lazy');
         tile.appendChild(img);
 
         // create action bar
