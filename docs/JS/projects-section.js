@@ -90,24 +90,6 @@ const projects = [
         promoted: false
     },
     {
-        title: 'Interactive Rain',
-        tags: ['Web', 'P5.js'],
-        img: 'p5-rain.png',
-        github: '',
-        youtube: '',
-        web: 'https://editor.p5js.org/Wojtek987/sketches/5z0m4fI-8',
-        promoted: false
-    },
-    {
-        title: 'Tiny Paint',
-        tags: ['Web', 'P5.js'],
-        img: 'p5-paint.png',
-        github: '',
-        youtube: '',
-        web: 'https://editor.p5js.org/Wojtek987/sketches/DjacfpdEn',
-        promoted: false
-    },
-    {
         title: 'Pong',
         tags: ['Web', 'P5.js'],
         img: 'p5-pong.png',
@@ -116,15 +98,6 @@ const projects = [
         web: 'https://editor.p5js.org/Wojtek987/sketches/iSPxXIfW3',
         promoted: false
     },
-    {
-        title: 'Calming Screen Saver',
-        tags: ['Web', 'P5.js'],
-        img: 'p5-screen-saver.png',
-        github: '',
-        youtube: '',
-        web: 'https://editor.p5js.org/Wojtek987/sketches/hAfoSxIo-',
-        promoted: false
-    }
 ];
 
 const tileContainer = document.querySelector('#project-tile-container');
